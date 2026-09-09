@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti - Rituals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "primary-fixed-dim": "#bccca7",
+                            "secondary-container": "#febb84",
+                            "on-primary-fixed-variant": "#3d4b2f",
+                            "inverse-surface": "#343027",
+                            "tertiary": "#506148",
+                            "background": "#fff8ef",
+                            "on-secondary-fixed-variant": "#693c0f",
+                            "tertiary-container": "#697a5f",
+                            "outline": "#75786e",
+                            "on-tertiary": "#ffffff",
+                            "on-primary": "#ffffff",
+                            "surface-bright": "#fff8ef",
+                            "surface-container-highest": "#e9e2d3",
+                            "primary-container": "#6b7a5a",
+                            "inverse-primary": "#bccca7",
+                            "on-surface": "#1e1b13",
+                            "tertiary-fixed": "#d5e8c8",
+                            "error": "#ba1a1a",
+                            "surface-dim": "#e0d9cb",
+                            "surface-container-lowest": "#ffffff",
+                            "inverse-on-surface": "#f8f0e1",
+                            "on-tertiary-container": "#fbfff2",
+                            "on-error-container": "#93000a",
+                            "on-error": "#ffffff",
+                            "surface": "#fff8ef",
+                            "secondary": "#855324",
+                            "primary": "#536143",
+                            "error-container": "#ffdad6",
+                            "on-tertiary-fixed": "#111f0b",
+                            "tertiary-fixed-dim": "#b9ccad",
+                            "surface-container-high": "#efe7d9",
+                            "on-primary-container": "#fcfff1",
+                            "secondary-fixed-dim": "#fbb981",
+                            "outline-variant": "#c5c8bc",
+                            "on-secondary-container": "#79491b",
+                            "primary-fixed": "#d8e8c2",
+                            "surface-container-low": "#fbf3e4",
+                            "on-tertiary-fixed-variant": "#3b4b33",
+                            "secondary-fixed": "#ffdcc2",
+                            "on-primary-fixed": "#131f07",
+                            "surface-variant": "#e9e2d3",
+                            "surface-tint": "#546345",
+                            "surface-container": "#f5edde",
+                            "on-surface-variant": "#45483f",
+                            "on-background": "#1e1b13",
+                            "on-secondary": "#ffffff",
+                            "on-secondary-fixed": "#2e1500"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "gutter": "24px",
+                            "unit": "8px",
+                            "margin-desktop": "64px",
+                            "container-max": "1280px",
+                            "section-gap": "120px",
+                            "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                            "display-md": [
+                                    "Playfair Display"
+                            ],
+                            "display-lg": [
+                                    "Playfair Display"
+                            ],
+                            "headline-lg-mobile": [
+                                    "Playfair Display"
+                            ],
+                            "headline-lg": [
+                                    "Playfair Display"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "label-md": [
+                                    "Inter"
+                            ],
+                            "caption": [
+                                    "Inter"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "display-md": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.01em",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "64px",
+                                    {
+                                            "lineHeight": "72px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "headline-lg-mobile": [
+                                    "28px",
+                                    {
+                                            "lineHeight": "36px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "label-md": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "caption": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+                },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8ef;
+            color: #1e1b13;
+        }
+        .checkbox-custom:checked {
+            background-color: #536143;
+            border-color: #536143;
+        }
+    </style>
+</head>
+<body class="font-body-md bg-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/80 backdrop-blur-md dark:bg-surface-dim/80 flat no shadows bg-surface-container-low dark:bg-surface-container-lowest hidden md:block">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-display-md text-display-md text-primary dark:text-primary-fixed-dim italic" href="#">
+                Prakriti
+            </a>
+<!-- Navigation Links -->
+<ul class="flex items-center space-x-8">
+<li>
+<a class="font-display-md text-display-md tracking-tight text-on-surface-variant dark:text-outline hover:text-primary transition-colors hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 scale-95 active:opacity-80 transition-transform" href="#">
+                        Shop
+                    </a>
+</li>
+<li>
+<a class="font-display-md text-display-md tracking-tight text-on-surface-variant dark:text-outline hover:text-primary transition-colors hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 scale-95 active:opacity-80 transition-transform" href="#">
+                        Consultation
+                    </a>
+</li>
+<li>
+<a class="font-display-md text-display-md tracking-tight text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 scale-95 active:opacity-80 transition-transform" href="#">
+                        Rituals
+                    </a>
+</li>
+</ul>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-6 text-primary dark:text-primary-fixed-dim">
+<button class="hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero / Header Section -->
+<section class="bg-surface-container-low py-16 px-gutter">
+<div class="max-w-3xl mx-auto text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 md:hidden font-headline-lg-mobile text-headline-lg-mobile">Your Daily Rituals</h1>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 hidden md:block">Your Daily Rituals</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto">Cultivate balance and radiance through mindful, nature-infused routines.</p>
+<!-- Progress Bar -->
+<div class="max-w-md mx-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Morning Ritual</span>
+<span class="font-label-md text-label-md text-primary">60% Complete</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-500 ease-in-out" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabs -->
+<section class="border-b border-surface-variant">
+<div class="max-w-container-max mx-auto px-gutter flex justify-center space-x-12">
+<button class="py-4 font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary">Morning</button>
+<button class="py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Evening</button>
+</div>
+</section>
+<!-- Timeline Ritual Content -->
+<section class="py-section-gap px-gutter">
+<div class="max-w-2xl mx-auto relative">
+<!-- Timeline Line -->
+<div class="absolute left-[23px] top-4 bottom-4 w-[2px] bg-surface-variant -z-10"></div>
+<!-- Step 1 -->
+<div class="flex items-start mb-16 relative">
+<div class="flex-shrink-0 mr-8 bg-surface w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center relative z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary text-xl">water_drop</span>
+</div>
+<div class="flex-grow pt-2">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider mb-1 block">Step 1</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Gentle Cleansing</h3>
+</div>
+<input checked="" class="w-6 h-6 rounded-full border-2 border-outline-variant text-primary focus:ring-primary checkbox-custom transition-colors cursor-pointer mt-1" type="checkbox"/>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm mt-4">
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Purifying Botanical Wash</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Massage 2 pumps onto damp skin in circular upward motions for 60 seconds. Rinse with lukewarm water.</p>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start mb-16 relative">
+<div class="flex-shrink-0 mr-8 bg-surface w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center relative z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary text-xl">local_florist</span>
+</div>
+<div class="flex-grow pt-2">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider mb-1 block">Step 2</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Toning Mist</h3>
+</div>
+<input checked="" class="w-6 h-6 rounded-full border-2 border-outline-variant text-primary focus:ring-primary checkbox-custom transition-colors cursor-pointer mt-1" type="checkbox"/>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm mt-4 flex items-center gap-6">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a delicate frosted glass bottle containing a pale pink facial mist, surrounded by fresh rose petals and soft, diffused natural lighting. The mood is fresh, calming, and high-end botanical skincare. The color palette features soft creams, muted pinks, and sage greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARarOLSx9zqrla0KPgpetm1LaZmyAYujnIsg-UHB0BARpp6pNM9Shn5jHGrtWfxiXHmHZGqBfNtweDJjQCn0a7pMWBcfPjlRaTDWB2gl77iimfM4LgNgqvM5kuMxYleIkf9jARJ02cfOwt613N5sDHiWceVo0Cs-9oMpLatd7KpRUHiIF95BGHXGrgVn6w6eLykuwTXaQEUH02CL2tv7fNUpQ23gFrJis-MZRDPqo43LS_-BF1a4F2ow"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Damask Rose Hydrosol</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Spritz 3-4 times over face and neck, pressing gently into the skin while still damp.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start relative opacity-70">
+<div class="flex-shrink-0 mr-8 bg-surface-container w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-outline text-xl">spa</span>
+</div>
+<div class="flex-grow pt-2">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider mb-1 block">Step 3</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Radiant Serum</h3>
+</div>
+<input class="w-6 h-6 rounded-full border-2 border-outline-variant text-primary focus:ring-primary checkbox-custom transition-colors cursor-pointer mt-1" type="checkbox"/>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm mt-4">
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Vitamin C &amp; Ashwagandha Elixir</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Apply 3 drops to fingertips and gently press into skin until fully absorbed. Allow 1 minute before moisturizing.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-dim shadow-[0_-4px_20px_rgba(83,97,67,0.08)] shadow-md fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-surface-dim">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-6 py-1.5 hover:text-primary dark:hover:text-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">auto_awesome</span>
+<span class="font-label-md text-label-md">Daily</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-6 py-1.5 hover:text-primary dark:hover:text-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">menu_book</span>
+<span class="font-label-md text-label-md">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1.5 hover:text-primary dark:hover:text-primary-fixed-dim Active: scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="font-label-md text-label-md">Rituals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-6 py-1.5 hover:text-primary dark:hover:text-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">person</span>
+<span class="font-label-md text-label-md">Account</span>
+</a>
+</nav>
+<!-- Standard Footer Placeholder -->
+<footer class="bg-surface-container-high py-12 px-gutter mt-auto mb-20 md:mb-0">
+<div class="max-w-container-max mx-auto text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Prakriti Botanicals. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

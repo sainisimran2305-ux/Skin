@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Radiant Glow Face Serum - Prakriti</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#536143",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f5edde",
+                        "secondary": "#855324",
+                        "surface-dim": "#e0d9cb",
+                        "tertiary": "#506148",
+                        "on-primary-container": "#fcfff1",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3b4b33",
+                        "on-surface-variant": "#45483f",
+                        "on-background": "#1e1b13",
+                        "outline-variant": "#c5c8bc",
+                        "on-secondary-fixed-variant": "#693c0f",
+                        "tertiary-container": "#697a5f",
+                        "on-primary-fixed": "#131f07",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#febb84",
+                        "surface-bright": "#fff8ef",
+                        "surface-container-high": "#efe7d9",
+                        "inverse-surface": "#343027",
+                        "on-secondary-fixed": "#2e1500",
+                        "primary-fixed-dim": "#bccca7",
+                        "primary-fixed": "#d8e8c2",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#b9ccad",
+                        "secondary-fixed-dim": "#fbb981",
+                        "tertiary-fixed": "#d5e8c8",
+                        "primary-container": "#6b7a5a",
+                        "inverse-primary": "#bccca7",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-primary-fixed-variant": "#3d4b2f",
+                        "surface-container-highest": "#e9e2d3",
+                        "surface-variant": "#e9e2d3",
+                        "outline": "#75786e",
+                        "on-surface": "#1e1b13",
+                        "on-secondary-container": "#79491b",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fff8ef",
+                        "background": "#fff8ef",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#111f0b",
+                        "inverse-on-surface": "#f8f0e1",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#fbfff2",
+                        "surface-container-low": "#fbf3e4",
+                        "surface-tint": "#546345"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-md": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        body { background-color: #fff8ef; color: #1e1b13; }
+        
+        .quantity-btn:hover { background-color: #e9e2d3; }
+        .tab-btn.active { border-bottom: 2px solid #536143; font-weight: 600; color: #536143; }
+        
+        /* Subtle elevation and transitions */
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(58, 74, 50, 0.15); }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden relative">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-md z-50 bg-transparent flat no shadows transition-all duration-300 ease-in-out" id="navbar">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<div class="flex items-center gap-gutter">
+<!-- Links (Desktop) -->
+<div class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Profile</a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<a class="font-display-md text-display-md text-primary dark:text-primary-fixed italic absolute left-1/2 transform -translate-x-1/2" href="#">Prakriti</a>
+<div class="flex items-center">
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Background Animation Layer -->
+<!-- STITCH_SHADER_START:ANIMATION_1 class="fixed inset-0 w-full h-full pointer-events-none z-[-1] opacity-30" -->
+<div class="fixed inset-0 w-full h-full pointer-events-none z-[-1] opacity-30" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_1" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_1');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+// Simple pseudo-random function
+float hash(float n) { return fract(sin(n) * 43758.5453123); }
+
+// Leaf shape function
+float leaf(vec2 p, float size, float rot) {
+    p *= mat2(cos(rot), -sin(rot), sin(rot), cos(rot));
+    p /= size;
+    float r = length(p);
+    float a = atan(p.y, p.x);
+    // Leaf-like polar equation
+    float d = 0.5 * (1.0 + 0.5 * sin(a)) * (1.0 + 0.2 * cos(3.0 * a));
+    return smoothstep(d, d - 0.05, r);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec3 bgColor = vec3(0.96, 0.945, 0.91); // #F5F1E8
+    vec3 leafColor = vec3(0.42, 0.48, 0.35); // #6B7A5A
+    
+    vec3 color = bgColor;
+    
+    // Animate 8 leaves falling
+    for(int i = 0; i < 8; i++) {
+        float fi = float(i);
+        float t = u_time * 0.3 + hash(fi) * 10.0;
+        
+        float x = fract(hash(fi * 1.2) + sin(t * 0.5) * 0.1);
+        float y = fract(hash(fi * 0.7) - t * 0.8);
+        
+        vec2 leafPos = uv - vec2(x, y);
+        float rot = t * 2.0 + hash(fi) * 6.28;
+        float size = 0.03 + hash(fi * 2.1) * 0.02;
+        
+        float l = leaf(leafPos, size, rot);
+        color = mix(color, leafColor, l * 0.4); // 40% opacity for drift effect
+    }
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_1 -->
+<main class="pt-24 pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Product Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap">
+<!-- Image Gallery (Left, spanning 7 columns) -->
+<div class="md:col-span-7 flex flex-col gap-unit">
+<!-- Main Image -->
+<div class="w-full aspect-[4/5] bg-surface-container rounded-lg overflow-hidden relative">
+<img alt="Radiant Glow Face Serum" class="w-full h-full object-cover" data-alt="A high-end, minimalist product shot of a glowing amber face serum bottle placed on a rough-hewn stone slab. Soft natural light filters in, creating a serene, earthy atmosphere. Subtle shadows and a warm color palette of taupe, cream, and forest green emphasize the premium, botanical nature of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdTns35ysH6yhugXxnHAEN2DFFpmQPoDxGm-MRRxE7DEzjWuSY5767glmP7zJzeJfN47bklHikE8nfuVfMySHkgFlDyznlppa7NamPp-oAUAFug0nHsoZoxhk6oFVnMmAlQpHX1IxrgYHYf7n-5vUPm4mmdv84uNZj0fl32A1T2c6WO28sYTxn4x5JbMT0B8zvq5P14X5pkeYddpViNg0ox9WTSolMiG9a2SMwTPFpc6dKNTKVlLkZpQ"/>
+<!-- Chip -->
+<div class="absolute top-4 left-4 bg-[#855324]/10 px-3 py-1 rounded-full">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest text-[10px]">Best Seller</span>
+</div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-unit">
+<div class="aspect-square bg-surface-container rounded cursor-pointer overflow-hidden opacity-50 hover:opacity-100 transition-opacity">
+<img alt="Serum drop detail" class="w-full h-full object-cover" data-alt="Detail shot of a drop of translucent amber serum resting on a green leaf. High key lighting, macro photography, emphasizing purity and natural ingredients. Earthy background tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZgCg-eetKBFUuMRZa2-6dKiKmQO3cLRuQAVHE-2U6FCQzmgdtJZGms5JrcQ1qhc3oh5gtEUOreU-NItVNyfYvBF_pFCdmpkQcCQrHrkboSzd7yXzSnRzLG430k7XpN2sPTnINumunQGvuSo0rkzAlatTcjbrDZarHjTnEZWd42mf0nX5qkFypi4XLY187MvzSHmzTGyB81wPF5ZFXj327pwfVWOivnJ3Ed-Yaw0PKRSWa1CtbBOWLKA"/>
+</div>
+<div class="aspect-square bg-surface-container rounded cursor-pointer overflow-hidden opacity-50 hover:opacity-100 transition-opacity">
+<img alt="Application lifestyle" class="w-full h-full object-cover" data-alt="Lifestyle shot of a woman with glowing skin applying serum to her cheek. Soft, warm natural light, minimalist background in taupe and cream, evoking a serene self-care routine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgqm7jydBgNjh2F74jl_4RrbYB3yHv1qEd3hrIco8bBwqHca217-y6YBUtZtTsptxP_vniTbCZd-J_O88TpAgS5boRPtL2tQCtkCDnPPH2YnviDV-ZyS_Dv9_cTbb0auMSZll_-hfI4PUixztgBqdxpIwiSVgACea4gx4SrZP-G52LFnrC0g6JEZBe-oZBqjP6jvFw7nz194EKRl_j1dTpqwcWAO9TSMBQ5VccKjsf3lGUrT_lm-1y4g"/>
+</div>
+<div class="aspect-square bg-surface-container rounded cursor-pointer overflow-hidden opacity-50 hover:opacity-100 transition-opacity">
+<img alt="Botanical ingredients" class="w-full h-full object-cover" data-alt="Ingredients flat lay featuring raw botanical elements: rosehip, jojoba seeds, and calendula petals neatly arranged on a pristine cream background. Clean, editorial layout, subtle lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgMfuvcyEoglsVbBL_cSI6ZNUEiVdvNsEU89dElcmYrAuE_BuzRsjoHxkt9P5qyLGke5hkcwXbCYCDVanPpiutFc9zMUZFFZnmG8szUoKTt7MuAhMJ5UI_5HjwwEF6yTk28lLbvw4dKVQAqmCx_6RWqchc6d-kll6WQUx7UHrNoW-h1bxPnRRMCdcAfgX5QBwLZO7KjYhDgPEwecFPgbLEgWT-24lY8GA-a2pn7DhIHFQjxZ166Kagig"/>
+</div>
+<div class="aspect-square bg-surface-container rounded cursor-pointer overflow-hidden opacity-50 hover:opacity-100 transition-opacity">
+<img alt="Packaging detail" class="w-full h-full object-cover" data-alt="Packaging detail showing the elegant glass bottle and the minimalist label with elegant typography. Focus on texture of the label paper and the amber glass, softly lit against a taupe background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBxGzPbpHsWe6aV_p2U1NgiPnJSwB-KQxamKR8HS6ZO8_667RRGIjLrb8uEWknn0larkjx155QqYBvSgJWotbS-QhzjobkcfAx62ES2zUklDX0mHjg-DkT2-J783HyooWh2mMVKY1KnsGZ8ihCdYgW2nS0udNbpm22-8XJ2eYcyXG5tBHL8i3w2Ki_4uaSqaQnWIqwZL5C8EVu5e73o_EurqgJ0geZLXKO0wiH1dlwnN2qNNbffMbSQ"/>
+</div>
+</div>
+</div>
+<!-- Product Details (Right, spanning 5 columns) -->
+<div class="md:col-span-5 flex flex-col md:pl-8 pt-8 md:pt-0 sticky top-32 h-fit">
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-caption text-caption mb-6">
+<ol class="inline-flex items-center space-x-1 md:space-x-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Skincare</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] mx-1" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Serums</a>
+</div>
+</li>
+</ol>
+</nav>
+<h1 class="font-display-md text-display-md text-primary mb-2">Radiant Glow Face Serum</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">$68.00</p>
+<div class="flex items-center gap-1 mb-8">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="star_half" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<a class="ml-2 font-caption text-caption text-primary underline hover:text-secondary transition-colors" href="#reviews">(124 Reviews)</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    A potent, lightweight botanical elixir designed to restore luminosity and balance to dull skin. Formulated with wildcrafted botanicals, it absorbs instantly to deeply nourish and impart a healthy, natural glow without feeling greasy.
+                </p>
+<!-- Selectors & Add to Cart -->
+<div class="mb-10">
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center border border-outline-variant rounded-full px-2 py-1 h-12 w-32">
+<button aria-label="Decrease quantity" class="quantity-btn w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<input aria-label="Quantity" class="w-full bg-transparent border-none text-center font-body-md text-body-md text-on-surface focus:ring-0 p-0" min="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="quantity-btn w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<button class="flex-1 h-12 bg-primary text-on-primary font-label-md text-label-md rounded-full px-8 hover:bg-tertiary transition-colors flex items-center justify-center gap-2 uppercase tracking-widest">
+                            Add to Cart
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Accordion Details -->
+<div class="border-t border-surface-dim">
+<details class="group py-4 border-b border-surface-dim cursor-pointer" open="">
+<summary class="flex justify-between items-center font-label-md text-label-md text-primary uppercase list-none">
+                            Ingredients
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant pr-4">
+<ul class="space-y-2">
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span><strong>Rosehip Seed Oil:</strong> Rich in vitamins A and C to brighten.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span><strong>Sea Buckthorn:</strong> Promotes cellular regeneration and elasticity.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span><strong>Jojoba Oil:</strong> Mimics natural sebum to balance hydration.</span>
+</li>
+</ul>
+</div>
+</details>
+<details class="group py-4 border-b border-surface-dim cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-label-md text-primary uppercase list-none">
+                            How to Use
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant pr-4">
+<p>Apply 3-5 drops to cleansed and toned skin morning and night. Massage in upward, circular motions. Allow to absorb fully before applying moisturizer or makeup.</p>
+</div>
+</details>
+<details class="group py-4 border-b border-surface-dim cursor-pointer">
+<summary class="flex justify-between items-center font-label-md text-label-md text-primary uppercase list-none">
+                            Sustainability
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant pr-4">
+<p>Housed in a recyclable glass bottle. All ingredients are ethically sourced and certified organic. 100% vegan and cruelty-free.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Related Products Section -->
+<section class="mb-section-gap">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg md:font-display-md md:text-display-md text-primary mb-4">Complete Your Ritual</h2>
+<div class="w-16 h-px bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-dim aspect-[4/5] rounded-lg overflow-hidden mb-4 relative card-hover">
+<img alt="Purifying Cleanser" class="w-full h-full object-cover" data-alt="Minimalist product shot of a gentle facial cleanser in an elegant pump bottle. Placed on a textured cream background with a single green leaf. Soft, diffused lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPpv7UTWhigxE0ylujyHLve3nxhybjw95cCdwcamFUnC4KQt9ZM6WWW-jhvRkngFYbIrzjdfCSUcv7UMQErIQd5sXVYJa40j02e5-ySSHbsT_e0D0ghVUOLrE9hJCMNLRjymJA7ujYUrh9Q3oWHAb-Rb19p3JGvkgIU1hDbUm93VnvSEg2wNpxKhgPwgs_810l-NehtLaRUSoj14mm0CmgJCN8QOSuKFc_JcBQGK2GNk0iDDQDwDSyw"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-surface text-primary px-6 py-2 rounded-full font-label-md text-label-md uppercase tracking-widest text-[10px]">Quick Add</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Purifying Cleanser</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$42.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-dim aspect-[4/5] rounded-lg overflow-hidden mb-4 relative card-hover">
+<img alt="Rosewater Mist" class="w-full h-full object-cover" data-alt="High-end botanical toner mist bottle, frosted glass, surrounded by subtle water droplets and fresh rose petals on a soft taupe surface. Editorial skincare photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXiCjaj03SQGIww354nP1YTd5s4AjRUIYzTr7LsIMUwRBCODFE6CQ4DeOonEdUUozip4yMQ5lpY7g77bVZous_oWpcjwT-kxgqDuJobjyZ4-YBRTsRTqJFIyITTshlLDEr5nxPvC9zzoNxKinJou6226lUmAB-MOcQN4lNGfOm0cwjkIQ6SaTfrV7exFslRSn7ru9Mdk1pcskEMbLhfd8AQ8smS9mGl7ZpGn9_Dc7_mhcLPBR_sSjv9g"/>
+</div>
+<div class="text-center">
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Rosewater Mist</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$38.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-dim aspect-[4/5] rounded-lg overflow-hidden mb-4 relative card-hover">
+<img alt="Nourishing Cream" class="w-full h-full object-cover" data-alt="Rich nourishing face cream in a frosted glass jar with a dark wooden lid. Placed on an earthy, organic stone slab with soft natural lighting and minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfe5_3klvuAMl5NK73NJpw_hPSCZwMx21TpbrX7w6vZtHpZ76m4A84Zz57bYpoAJvg-mgcNKut1RHyHxufWeOTyIMqcZJ7FKYHIxtsnjEKEgbrxtr0BkBMmpS8zy5d5tnClCCQ3FGbtx-vA-S0uEtlkmLPk7bg1H9SA9cgL0QhJKZHhFl126M9KiagYXeEqrlS-OX-YoD1TjW6HVNuCs5uF-xfOoCyh4m1Yfz0NiPwxe1yjCbLkDi2XA"/>
+</div>
+<div class="text-center">
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Nourishing Cream</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$85.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-dim aspect-[4/5] rounded-lg overflow-hidden mb-4 relative card-hover">
+<img alt="Jade Roller Set" class="w-full h-full object-cover" data-alt="Smooth, sculpted jade roller and gua sha set resting on a pristine cream linen cloth. Clean, minimalist lighting highlighting the natural green tones of the stone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3VBbwYZbwwMkVMftX1q3OsAG79ZguRkz4UNpm5M-qOjYOjUWCea92B9vcvjKPJ6XAYvyYHBcmvUYv7inmfvkP3opawVUGlF-lETQiJZholQM__5k4TV0wGxXgrAbeQazOOvBlUZi_QWGSQAzXYin4fNz_sg04qz2QaaW9blQXaN4mPaJrjLb3ty4lta7P7bFuEJfdoCtYi70KuRNiyyDPQm1wJ9GQDI8oQed1jU0WwwqZPt--I6jbFA"/>
+</div>
+<div class="text-center">
+<h3 class="font-body-lg text-body-lg text-primary mb-1">Jade Sculpting Set</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$55.00</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container dark:bg-surface-container-highest mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<div class="flex flex-col items-start gap-4">
+<span class="font-display-md text-display-md text-primary dark:text-primary-fixed italic">Prakriti</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-2 opacity-90">Essential nature for conscious living. Premium botanical skincare rooted in pure, organic efficacy.</p>
+</div>
+<div class="flex flex-col gap-3 md:items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100" href="#">Shop All</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100" href="#">Our Story</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-3 md:items-end">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<p class="font-caption text-caption text-secondary dark:text-secondary-fixed-dim mt-4">© 2024 Prakriti Skincare. Rooted in Nature.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-surface/95', 'shadow-sm');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-surface/95', 'shadow-sm');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti Skin Quiz - Step 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#131f07",
+                        "inverse-primary": "#bccca7",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e9e2d3",
+                        "surface": "#fff8ef",
+                        "surface-variant": "#e9e2d3",
+                        "inverse-surface": "#343027",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#fbb981",
+                        "tertiary-fixed": "#d5e8c8",
+                        "surface-bright": "#fff8ef",
+                        "outline-variant": "#c5c8bc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf3e4",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fff8ef",
+                        "tertiary": "#506148",
+                        "on-surface-variant": "#45483f",
+                        "surface-tint": "#546345",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fbfff2",
+                        "on-primary-container": "#fcfff1",
+                        "secondary": "#855324",
+                        "surface-dim": "#e0d9cb",
+                        "on-tertiary-fixed": "#111f0b",
+                        "on-background": "#1e1b13",
+                        "primary-fixed": "#d8e8c2",
+                        "outline": "#75786e",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3b4b33",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-secondary-fixed": "#2e1500",
+                        "surface-container-high": "#efe7d9",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3d4b2f",
+                        "secondary-container": "#febb84",
+                        "primary-fixed-dim": "#bccca7",
+                        "on-secondary-fixed-variant": "#693c0f",
+                        "primary": "#536143",
+                        "surface-container": "#f5edde",
+                        "on-surface": "#1e1b13",
+                        "primary-container": "#6b7a5a",
+                        "tertiary-fixed-dim": "#b9ccad",
+                        "inverse-on-surface": "#f8f0e1",
+                        "tertiary-container": "#697a5f",
+                        "on-secondary-container": "#79491b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "display-md": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8ef; /* surface */
+            color: #1e1b13; /* on-surface */
+        }
+        
+        .quiz-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: #e9e2d3; /* surface-variant - Soft Taupe */
+            border: 2px solid transparent;
+        }
+        
+        .quiz-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(58, 74, 50, 0.15); /* 15% opacity Forest Green ambient shadow */
+            transform: translateY(-2px);
+        }
+        
+        .quiz-card.selected {
+            border-color: #536143; /* primary - Sage Green */
+            background-color: #fff8ef; /* Cream */
+            box-shadow: 0 10px 25px -5px rgba(58, 74, 50, 0.15);
+        }
+        
+        .quiz-card.selected .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .progress-bar-fill {
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md antialiased">
+<!-- Top Navigation - Shared Component (Simplified for transactional page) -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md pb-4 pt-6 md:pt-8 transition-all duration-300">
+<div class="flex flex-col items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-md text-display-md text-primary mb-6 hover:opacity-80 transition-opacity" href="#">
+                Prakriti
+            </a>
+<!-- Progress Bar Section -->
+<div class="w-full max-w-2xl flex flex-col items-center gap-4">
+<div class="w-full bg-surface-container-highest rounded-full h-1 overflow-hidden relative">
+<div class="progress-bar-fill bg-primary h-full rounded-full w-1/3 absolute top-0 left-0"></div>
+</div>
+<div class="flex justify-between w-full font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<span>Step 1 of 3</span>
+<span>Skin Type</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[180px] md:pt-[200px] pb-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col items-center relative z-10">
+<!-- Header Section -->
+<div class="text-center mb-16 md:mb-24 w-full max-w-3xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-6">
+                Tell us about your skin
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
+                Understanding your essential nature helps us craft a botanical ritual perfectly suited to your needs. Select the type that best describes your skin.
+            </p>
+</div>
+<!-- Bento Grid of Choices -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full max-w-4xl mb-16">
+<!-- Option 1: Oily -->
+<div class="quiz-card rounded-xl overflow-hidden flex flex-col sm:flex-row h-auto sm:h-48 group relative" onclick="selectCard(this)">
+<!-- Image Area -->
+<div class="w-full sm:w-2/5 h-48 sm:h-full relative overflow-hidden bg-surface-container">
+<img alt="Sage leaves" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLtRR6bVZzBVa6tfYG4x6hS2cE55KZAHvt2CRzx15FYH4FMj7cx5zzCcCTxN5A4prn0SqlzXp8LF1AmOlMKJ_pYKsgPrR3B-9fbLh33vH6ErwiqfDJJFythHeJTS8sKtzEf7IEkW5oX2zg8h82Djsonog1Kx6-1xrKHnnG9wTD-h2Bfg_lCj8El9vm7mqAyzegoL8ZG2kYakoZYLJBejawVHkSY6YoITkEoHFr1l75rcTuPYUAt4Xi1GpiLp"/>
+</div>
+<!-- Content Area -->
+<div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center relative">
+<h3 class="font-label-md text-label-md uppercase text-primary mb-3">Oily</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Prone to excess shine, visible pores, and occasional congestion throughout the day.</p>
+<!-- Selection Indicator -->
+<div class="check-icon absolute top-6 right-6 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center opacity-0 scale-75 transition-all duration-300">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+<!-- Option 2: Dry -->
+<div class="quiz-card rounded-xl overflow-hidden flex flex-col sm:flex-row h-auto sm:h-48 group relative" onclick="selectCard(this)">
+<div class="w-full sm:w-2/5 h-48 sm:h-full relative overflow-hidden bg-surface-container">
+<img alt="Dried lavender" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLuCH8eF8SeqX457OZpk8Xs_qKUJ-qvIqQF4lmzqSt92Ssa3YtYhGQrifB1vKaR-nlfSPCJWB-IKVRhfIAHXYliTzlNIZVNY1T74o5sxEsLXmfgZhfDQfi0MoybV4XiTNoxuqKRBDBSqNfLq-pAwetm-wRRQUPSVsxHxAZ33-wkKaMu2LX8NGSAG-SCetq2fo1q5gB3rGSzghxvyU2lJT54p2_BigBTnHqgAX5rxPavyo2h2s6IsXgZIfgFi"/>
+</div>
+<div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center relative">
+<h3 class="font-label-md text-label-md uppercase text-primary mb-3">Dry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Often feels tight, flaky, or rough. Craves deep, sustained hydration and rich nourishment.</p>
+<div class="check-icon absolute top-6 right-6 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center opacity-0 scale-75 transition-all duration-300">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+<!-- Option 3: Combination -->
+<div class="quiz-card rounded-xl overflow-hidden flex flex-col sm:flex-row h-auto sm:h-48 group relative" onclick="selectCard(this)">
+<div class="w-full sm:w-2/5 h-48 sm:h-full relative overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A beautiful, minimalist high-key photograph of two contrasting botanical elements resting together on a clean, light cream #F5F1E8 surface. One element is a vibrant, fresh green monstera leaf, and the other is a pale, dried wheat stalk. The composition represents harmony and balance. Soft natural daylight illuminates the scene, casting very subtle, diffused taupe shadows. Editorial skincare aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0pt2NBcxNywuX4gyfUssiLI8n_f7VMHww4ODfgjGjej5XGrvUrHUZq3HqLfsciZSWVBIS7qvHUbWErlpJu2O1xOi-KaESxnlpsAMvMjA_ZpbsLAzlsBJA7Way2ddFtbpnXKOdXlqXXcRR40-tMwTmVj4qe3dW1kJP_2OW01MQc9CwBWk7A76rLfoMrtQKEJdQCMWNUDfb5c-SSMopfesN7V7qQ3Dy06deRI74tR0ehivzJaJg6Dxouw')"></div>
+</div>
+<div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center relative">
+<h3 class="font-label-md text-label-md uppercase text-primary mb-3">Combination</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Oily in the T-zone (forehead, nose, chin) but normal to dry on the cheeks.</p>
+<div class="check-icon absolute top-6 right-6 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center opacity-0 scale-75 transition-all duration-300">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+<!-- Option 4: Sensitive -->
+<div class="quiz-card rounded-xl overflow-hidden flex flex-col sm:flex-row h-auto sm:h-48 group relative" onclick="selectCard(this)">
+<div class="w-full sm:w-2/5 h-48 sm:h-full relative overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A macro, delicate photograph of a single translucent chamomile petal resting softly on a perfectly smooth, off-white #F5F1E8 cream background. The lighting is extremely gentle and ethereal, creating a calming, serene mood indicative of sensitive skincare. Minimalist editorial style with expansive negative space. No harsh shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZlV4F05AHW3o8SgWvBstThtiuYcQ3UirY_uDeDy2iw29fkEjJvW4F4_y5yeEW6Ayoq1MsN9LDCeILctg03vr-HHuopb-cz4QamJAi0DVYcREgdB2BL7NnKU4Z5LgfwSZbOqAsvcp1r110xs313mGVYsAaZHLiObjO4ls9t3T2nWBqKuHl23ZDIO3Bp94m_gbahJLURRLJqSbrdr_CDRlOhHVwM3C9j4fX7hoV3RP8i-ctzb3vWOkmXw')"></div>
+</div>
+<div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center relative">
+<h3 class="font-label-md text-label-md uppercase text-primary mb-3">Sensitive</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Easily irritated, prone to redness, and reacts quickly to environmental changes or harsh products.</p>
+<div class="check-icon absolute top-6 right-6 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center opacity-0 scale-75 transition-all duration-300">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="w-full max-w-4xl flex justify-between items-center mt-8 border-t border-surface-container-highest pt-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 uppercase" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                Back
+            </a>
+<button class="bg-primary text-on-primary font-label-md text-label-md uppercase px-12 py-4 rounded opacity-50 cursor-not-allowed transition-all duration-300 hover:bg-primary/90 flex items-center gap-3" disabled="" id="nextBtn">
+                Continue
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Suppressed Nav/Footer: Contextual rule applied for linear transactional flow (Quiz). Navigation shell hidden to focus on canvas. -->
+<script>
+        function selectCard(clickedCard) {
+            // Remove selected class from all cards
+            const cards = document.querySelectorAll('.quiz-card');
+            cards.forEach(card => card.classList.remove('selected'));
+            
+            // Add selected class to clicked card
+            clickedCard.classList.add('selected');
+            
+            // Enable next button
+            const nextBtn = document.getElementById('nextBtn');
+            nextBtn.disabled = false;
+            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            nextBtn.classList.add('hover:shadow-lg', 'active:scale-95');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+                header.style.backgroundColor = 'rgba(255, 248, 239, 0.95)'; // surface slightly more opaque
+            } else {
+                header.classList.remove('shadow-sm');
+                header.style.backgroundColor = 'rgba(255, 248, 239, 0.9)';
+            }
+        });
+    </script>
+</body></html>

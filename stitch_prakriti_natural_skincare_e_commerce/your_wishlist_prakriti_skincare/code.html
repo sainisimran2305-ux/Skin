@@ -1,0 +1,323 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Wishlist - Prakriti Botanical Skincare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#75786e",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#bccca7",
+                    "on-primary-fixed": "#131f07",
+                    "surface": "#fff8ef",
+                    "on-tertiary-container": "#fbfff2",
+                    "on-surface": "#1e1b13",
+                    "secondary": "#855324",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#6b7a5a",
+                    "surface-container-highest": "#e9e2d3",
+                    "tertiary-fixed": "#d5e8c8",
+                    "secondary-container": "#febb84",
+                    "surface-container-low": "#fbf3e4",
+                    "background": "#fff8ef",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#546345",
+                    "on-tertiary-fixed-variant": "#3b4b33",
+                    "on-secondary-fixed": "#2e1500",
+                    "primary": "#536143",
+                    "surface-dim": "#e0d9cb",
+                    "on-secondary-container": "#79491b",
+                    "tertiary": "#506148",
+                    "secondary-fixed-dim": "#fbb981",
+                    "tertiary-fixed-dim": "#b9ccad",
+                    "tertiary-container": "#697a5f",
+                    "on-secondary-fixed-variant": "#693c0f",
+                    "inverse-on-surface": "#f8f0e1",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3d4b2f",
+                    "primary-fixed-dim": "#bccca7",
+                    "primary-fixed": "#d8e8c2",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#111f0b",
+                    "surface-container-high": "#efe7d9",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#fcfff1",
+                    "on-surface-variant": "#45483f",
+                    "outline-variant": "#c5c8bc",
+                    "on-background": "#1e1b13",
+                    "surface-bright": "#fff8ef",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e9e2d3",
+                    "surface-container": "#f5edde",
+                    "inverse-surface": "#343027"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-md": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "caption": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-md": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface-container-low dark:bg-surface-container-high">
+<div class="hidden md:flex gap-gutter">
+<a class="font-body-md text-body-md tracking-wider text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:opacity-80 active:scale-95 transition-transform" href="#">Shop</a>
+<a class="font-body-md text-body-md tracking-wider text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:opacity-80 active:scale-95 transition-transform" href="#">About</a>
+<a class="font-body-md text-body-md tracking-wider text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:opacity-80 active:scale-95 transition-transform" href="#">Rituals</a>
+<a class="font-body-md text-body-md tracking-wider text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors hover:opacity-80 active:scale-95 transition-transform" href="#">Sustainability</a>
+</div>
+<div class="font-display-md text-display-md text-primary dark:text-primary-fixed">Prakriti</div>
+<div class="flex gap-gutter items-center text-primary dark:text-primary-fixed">
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-all duration-300 hover:opacity-80 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:opacity-80 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-desktop max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- SideNav (Profile Layout) -->
+<aside class="md:col-span-3 hidden md:block">
+<div class="sticky top-32 flex flex-col gap-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">My Account</h2>
+<ul class="flex flex-col gap-4">
+<li class="">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">person</span>
+                            Profile
+                        </a>
+</li>
+<li class="">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                            Order History
+                        </a>
+</li>
+<li class="">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                            Addresses
+                        </a>
+</li>
+<li class="">
+<a class="font-body-md text-body-md text-primary font-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">favorite</span>
+                            Wishlist
+                        </a>
+</li><li class="">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+                            Reviews
+                        </a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Wishlist Canvas -->
+<section class="col-span-1 md:col-span-9">
+<h1 class="font-display-md text-display-md text-primary mb-12">Your Wishlist</h1>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-dim hover:bg-surface-container transition-colors duration-300 rounded-DEFAULT flex flex-col group relative">
+<button aria-label="Remove from wishlist" class="absolute top-4 right-4 z-10 text-primary hover:text-error transition-colors p-2 rounded-full bg-surface/50 backdrop-blur-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="h-64 w-full overflow-hidden rounded-t-DEFAULT">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist, high-end photograph of a glass skincare bottle containing a golden botanical serum. The bottle rests on a textured taupe stone surface, softly illuminated by natural sunlight filtering through leaves, casting dappled shadows. The aesthetic is serene, organic, and luxurious, matching a premium natural skincare brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFkCs3ItrFkDQJtYl4ojZn_xgkePryS5Xeo6A8tMvhVUDlyztLRJ7O3V3uU7w4opEO4AVcUf9KN8x97b4VhX6SDJOcEmZ9_z3eRwmjCGq5xMkZbem7GvEjOJVrQTEI_7EU3N24AIIOqAqhlqZJuG3tX3aOvt-aKJNzyvOJNvLBO9zjDsEKWtjJj_CQLTPtq87xBw264PM0Jl3QUHiO6XBTMtxf44ykaGCKvnmRCssE95XFZRNfMwOIeg">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Radiance Serum</h3>
+<p class="font-caption text-caption text-outline">Rosehip &amp; Sea Buckthorn</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">$68.00</span>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT hover:bg-surface-tint transition-colors">
+                                ADD TO CART
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-dim hover:bg-surface-container transition-colors duration-300 rounded-DEFAULT flex flex-col group relative">
+<button aria-label="Remove from wishlist" class="absolute top-4 right-4 z-10 text-primary hover:text-error transition-colors p-2 rounded-full bg-surface/50 backdrop-blur-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="h-64 w-full overflow-hidden rounded-t-DEFAULT">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A premium jar of botanical face cream resting on a smooth cream-colored backdrop. Subtle sprigs of dried sage and chamomile are artfully arranged nearby. The lighting is soft, diffused, and warm, emphasizing the organic texture of the cream and the minimalist elegance of the packaging. The mood is calm and refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNSOGzJ1vIfELHr9N--bqKW0FveZ7fZ_X61ybojmUEihhhVxDdHME9nYJCausplOP5OLvrk3XXfaAdnkhuyqwwEiZuyQzriXFT087PHyecYvoplmWmSL5rgFmrPHQ1gpVMzQ7LZvjb1y1Dk_gTGWLGbdD870aXPpSYKhFV5LAKaprtVsCydg9jEg1zXUXfFCizOqCKQQ6fPaz--bj2YplW2cJup3H_ERdTU_Qxx6jovgF2EpMjrV9CnA">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Calm Moisture</h3>
+<p class="font-caption text-caption text-outline">Chamomile &amp; Oat</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">$54.00</span>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT hover:bg-surface-tint transition-colors">
+                                ADD TO CART
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-dim hover:bg-surface-container transition-colors duration-300 rounded-DEFAULT flex flex-col group relative">
+<button aria-label="Remove from wishlist" class="absolute top-4 right-4 z-10 text-primary hover:text-error transition-colors p-2 rounded-full bg-surface/50 backdrop-blur-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="h-64 w-full overflow-hidden rounded-t-DEFAULT">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist composition featuring a sleek clay mask tube on a neutral taupe surface. Beside the tube is a small wooden mixing bowl and a soft bristle brush. The scene is bathed in gentle, warm light, creating subtle ambient shadows that highlight the premium, natural quality of the skincare products." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYxZffh3kxJ-5kRE4Qns34o7obb4XtxjoaOeS0TdS-hlyf-s01Qw0Sx91KKhoHsZDco737lITSlKkCNkaBB_Ffstul74MFO8j9mwqVk0AImM2tYjP_kZUd2NMp18r0WrrRGJMB9IZu9bCUCn_0F1WsODLServYbm0P-LVuj21fX0RBT2snxWusYWPw7gSG7dJZjUd9wHrML2zRMEv8lwEasIhOqSPO_vhPTPy_8ombUbwSw24KRYeX1Q">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Purify Mask</h3>
+<p class="font-caption text-caption text-outline">French Green Clay</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">$42.00</span>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT hover:bg-surface-tint transition-colors">
+                                ADD TO CART
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-high dark:bg-inverse-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-section-gap max-w-container-max mx-auto gap-gutter">
+<div class="font-display-md text-display-md text-primary dark:text-primary-fixed mb-8 md:mb-0">Prakriti</div>
+<div class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors transition-all duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors transition-all duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors transition-all duration-200" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors transition-all duration-200" href="#">Contact Us</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface text-center md:text-right">
+                © 2024 Prakriti Botanical Skincare. All rights reserved.
+            </div>
+</div>
+</footer>
+
+
+</body></html>

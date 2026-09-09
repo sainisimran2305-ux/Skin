@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti - Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#536143",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f5edde",
+                      "secondary": "#855324",
+                      "surface-dim": "#e0d9cb",
+                      "tertiary": "#506148",
+                      "on-primary-container": "#fcfff1",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#3b4b33",
+                      "on-surface-variant": "#45483f",
+                      "on-background": "#1e1b13",
+                      "outline-variant": "#c5c8bc",
+                      "on-secondary-fixed-variant": "#693c0f",
+                      "tertiary-container": "#697a5f",
+                      "on-primary-fixed": "#131f07",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#febb84",
+                      "surface-bright": "#fff8ef",
+                      "surface-container-high": "#efe7d9",
+                      "inverse-surface": "#343027",
+                      "on-secondary-fixed": "#2e1500",
+                      "primary-fixed-dim": "#bccca7",
+                      "primary-fixed": "#d8e8c2",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#b9ccad",
+                      "secondary-fixed-dim": "#fbb981",
+                      "tertiary-fixed": "#d5e8c8",
+                      "primary-container": "#6b7a5a",
+                      "inverse-primary": "#bccca7",
+                      "secondary-fixed": "#ffdcc2",
+                      "on-primary-fixed-variant": "#3d4b2f",
+                      "surface-container-highest": "#e9e2d3",
+                      "surface-variant": "#e9e2d3",
+                      "outline": "#75786e",
+                      "on-surface": "#1e1b13",
+                      "on-secondary-container": "#79491b",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fff8ef",
+                      "background": "#fff8ef",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#111f0b",
+                      "inverse-on-surface": "#f8f0e1",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#fbfff2",
+                      "surface-container-low": "#fbf3e4",
+                      "surface-tint": "#546345"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "section-gap": "120px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px",
+                      "margin-mobile": "20px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "display-md": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "caption": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-md": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Smooth scrolling and basic resets */
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen relative overflow-x-hidden">
+<!-- Atmospheric Animation -->
+<!-- STITCH_SHADER_START:ANIMATION_1 class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-40" -->
+<div class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_1" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_1');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+// Simple pseudo-random function
+float hash(float n) { return fract(sin(n) * 43758.5453123); }
+
+// Leaf shape function
+float leaf(vec2 p, float size, float rot) {
+    p *= mat2(cos(rot), -sin(rot), sin(rot), cos(rot));
+    p /= size;
+    float r = length(p);
+    float a = atan(p.y, p.x);
+    // Leaf-like polar equation
+    float d = 0.5 * (1.0 + 0.5 * sin(a)) * (1.0 + 0.2 * cos(3.0 * a));
+    return smoothstep(d, d - 0.05, r);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec3 bgColor = vec3(0.96, 0.945, 0.91); // #F5F1E8
+    vec3 leafColor = vec3(0.42, 0.48, 0.35); // #6B7A5A
+    
+    vec3 color = bgColor;
+    
+    // Animate 8 leaves falling
+    for(int i = 0; i < 8; i++) {
+        float fi = float(i);
+        float t = u_time * 0.3 + hash(fi) * 10.0;
+        
+        float x = fract(hash(fi * 1.2) + sin(t * 0.5) * 0.1);
+        float y = fract(hash(fi * 0.7) - t * 0.8);
+        
+        vec2 leafPos = uv - vec2(x, y);
+        float rot = t * 2.0 + hash(fi) * 6.28;
+        float size = 0.03 + hash(fi * 2.1) * 0.02;
+        
+        float l = leaf(leafPos, size, rot);
+        color = mix(color, leafColor, l * 0.4); // 40% opacity for drift effect
+    }
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_1 -->
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-md z-50 transition-all duration-300 ease-in-out bg-transparent flat no shadows border-none">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<!-- Navigation Links -->
+<ul class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Profile</a></li>
+</ul>
+<!-- Brand Logo -->
+<a class="font-display-md text-display-md text-primary dark:text-primary-fixed italic tracking-tight relative z-10" href="#">Prakriti</a>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim">
+<button aria-label="Cart" class="hover:text-primary transition-all duration-200 relative group">
+<span class="material-symbols-outlined font-light text-[28px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary font-caption text-caption w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full relative z-10">
+<!-- Header -->
+<header class="mb-16 border-b border-outline-variant/30 pb-8">
+<h1 class="font-display-lg text-display-lg text-on-surface md:text-left text-center">Your Cart</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 md:text-left text-center">2 items rooted in nature.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Cart Items List -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-8 items-start sm:items-center py-6 border-b border-outline-variant/50 relative group">
+<!-- Image -->
+<div class="w-full sm:w-40 h-48 sm:h-40 bg-surface-container rounded-DEFAULT overflow-hidden shrink-0 relative">
+<img alt="Botanical Serum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end, minimalist product shot of a sage green glass dropper bottle resting on a textured taupe stone. The lighting is soft and natural, casting subtle shadows to emphasize the organic premium feel of the skincare brand. The background is a clean, creamy off-white, exuding a serene and luxurious aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3W7w8ownF22jBfB42EUzYjML1CUiWOE1i2QF50MLhKwgj0agy56oG79Da9qYtElNmj_OPssb7XZJ74sNpG96gqZh4988z-exBu-859MfrE1Sj9azpCTWnZLRxo20rEs_RA5Z71hOQS1ifXq-Ea4oyWxAEazXp2U_F56W3wNick6zcaWci51ynqnQf4GnZQ8Rs70sgK07DIvlu2YC4KjlW0ubh-kiNYcEHR6IjgH7fqVHqbMuEXBFhZQ"/>
+</div>
+<!-- Details -->
+<div class="flex-grow flex flex-col gap-2">
+<div class="flex justify-between items-start w-full">
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Botanical Clarifying Serum</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">30ml / Neem &amp; Tea Tree</p>
+</div>
+<button aria-label="Remove item" class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<!-- Quantity -->
+<div class="flex items-center border border-outline-variant rounded-full px-4 py-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-label-md text-label-md w-8 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<!-- Price -->
+<p class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">$48.00</p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-8 items-start sm:items-center py-6 border-b border-outline-variant/50 relative group">
+<!-- Image -->
+<div class="w-full sm:w-40 h-48 sm:h-40 bg-surface-container rounded-DEFAULT overflow-hidden shrink-0 relative">
+<img alt="Earth Clay Mask" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious, minimalist product photograph of a matte taupe jar of face cream resting elegantly on a smooth wooden plinth. Soft, diffused natural light filters in from the side, highlighting the velvety texture of the cream smeared slightly next to the jar. The scene is set against a warm, pale beige background, embodying earthy sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBjXR0rcMxQcpmuktHu0GRUe4XOZjPp3LXRQPLnvlXUhjGrR5lEzIuAQga74zEuN8tpvrQki_YLGQcvxu1enx803oxDLG5nsZ-4B5UtTBlRnuZF2mc7mHgkIhPQz1r_oOvyNT1k2c-frVZ1Zqov5sQ_ccA-hgCyhsAsOhMnOj6xaYai7UZgqQnXEkszu4Um3HU0atJdq0v8V00VZSd6FgFdf7ZGCgtzRt6H6eJMmU_nyCvC5pNRd8Qbg"/>
+</div>
+<!-- Details -->
+<div class="flex-grow flex flex-col gap-2">
+<div class="flex justify-between items-start w-full">
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Earth Purifying Mask</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">50g / Multani Mitti &amp; Sandalwood</p>
+</div>
+<button aria-label="Remove item" class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<!-- Quantity -->
+<div class="flex items-center border border-outline-variant rounded-full px-4 py-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-label-md text-label-md w-8 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<!-- Price -->
+<p class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">$32.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary Sidebar -->
+<div class="lg:col-span-4 mt-8 lg:mt-0">
+<div class="bg-surface-container rounded-lg p-8 sticky top-32 shadow-[0_4px_24px_rgba(58,74,50,0.05)] border border-surface-dim/30">
+<h2 class="font-display-md text-display-md text-on-surface mb-8">Summary</h2>
+<div class="flex flex-col gap-4 font-body-md text-body-md text-on-surface-variant mb-8 border-b border-outline-variant/30 pb-8">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span class="text-on-surface">$80.00</span>
+</div>
+<div class="flex justify-between">
+<span>Shipping</span>
+<span class="text-on-surface">Calculated at next step</span>
+</div>
+<div class="flex justify-between">
+<span>Taxes</span>
+<span class="text-on-surface">$0.00</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-8">
+<span class="font-body-lg text-body-lg text-on-surface">Total</span>
+<span class="font-display-md text-display-md text-primary">$80.00</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest py-5 px-8 rounded-full hover:bg-tertiary transition-colors duration-300 flex justify-center items-center gap-2 group">
+                        Proceed to Checkout
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<p class="font-caption text-caption text-on-surface-variant text-center mt-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                        Secure SSL Checkout
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container dark:bg-surface-container-highest mt-auto relative z-10 border-none">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-desktop py-section-gap opacity-90 hover:opacity-100 transition-opacity">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<span class="font-display-md text-display-md text-primary dark:text-primary-fixed italic tracking-tight">Prakriti</span>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">© 2024 Prakriti Skincare. Rooted in Nature.</p>
+</div>
+<!-- Links -->
+<div class="md:col-span-2 flex flex-wrap gap-x-12 gap-y-4 md:justify-end items-start font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Shop All</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Our Story</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Sustainability</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

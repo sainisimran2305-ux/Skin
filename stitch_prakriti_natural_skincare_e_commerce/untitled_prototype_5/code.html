@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti - Glow with Nature</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#536143",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f5edde",
+                        "secondary": "#855324",
+                        "surface-dim": "#e0d9cb",
+                        "tertiary": "#506148",
+                        "on-primary-container": "#fcfff1",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3b4b33",
+                        "on-surface-variant": "#45483f",
+                        "on-background": "#1e1b13",
+                        "outline-variant": "#c5c8bc",
+                        "on-secondary-fixed-variant": "#693c0f",
+                        "tertiary-container": "#697a5f",
+                        "on-primary-fixed": "#131f07",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#febb84",
+                        "surface-bright": "#fff8ef",
+                        "surface-container-high": "#efe7d9",
+                        "inverse-surface": "#343027",
+                        "on-secondary-fixed": "#2e1500",
+                        "primary-fixed-dim": "#bccca7",
+                        "primary-fixed": "#d8e8c2",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#b9ccad",
+                        "secondary-fixed-dim": "#fbb981",
+                        "tertiary-fixed": "#d5e8c8",
+                        "primary-container": "#6b7a5a",
+                        "inverse-primary": "#bccca7",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-primary-fixed-variant": "#3d4b2f",
+                        "surface-container-highest": "#e9e2d3",
+                        "surface-variant": "#e9e2d3",
+                        "outline": "#75786e",
+                        "on-surface": "#1e1b13",
+                        "on-secondary-container": "#79491b",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fff8ef",
+                        "background": "#fff8ef",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#111f0b",
+                        "inverse-on-surface": "#f8f0e1",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#fbfff2",
+                        "surface-container-low": "#fbf3e4",
+                        "surface-tint": "#546345"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-md": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fade-out {
+            animation: fadeOut 2s ease-in-out forwards;
+            pointer-events: none;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased relative">
+<!-- Page Entry Transition -->
+<div class="fixed inset-0 z-[100] bg-surface flex items-center justify-center fade-out" id="page-transition">
+<!-- STITCH_SHADER_START:ANIMATION_1 class="w-full h-full absolute inset-0" -->
+<div class="w-full h-full absolute inset-0" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_1" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_1');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+// Simple pseudo-random function
+float hash(float n) { return fract(sin(n) * 43758.5453123); }
+
+// Leaf shape function
+float leaf(vec2 p, float size, float rot) {
+    p *= mat2(cos(rot), -sin(rot), sin(rot), cos(rot));
+    p /= size;
+    float r = length(p);
+    float a = atan(p.y, p.x);
+    // Leaf-like polar equation
+    float d = 0.5 * (1.0 + 0.5 * sin(a)) * (1.0 + 0.2 * cos(3.0 * a));
+    return smoothstep(d, d - 0.05, r);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec3 bgColor = vec3(0.96, 0.945, 0.91); // #F5F1E8
+    vec3 leafColor = vec3(0.42, 0.48, 0.35); // #6B7A5A
+    
+    vec3 color = bgColor;
+    
+    // Animate 8 leaves falling
+    for(int i = 0; i < 8; i++) {
+        float fi = float(i);
+        float t = u_time * 0.3 + hash(fi) * 10.0;
+        
+        float x = fract(hash(fi * 1.2) + sin(t * 0.5) * 0.1);
+        float y = fract(hash(fi * 0.7) - t * 0.8);
+        
+        vec2 leafPos = uv - vec2(x, y);
+        float rot = t * 2.0 + hash(fi) * 6.28;
+        float size = 0.03 + hash(fi * 2.1) * 0.02;
+        
+        float l = leaf(leafPos, size, rot);
+        color = mix(color, leafColor, l * 0.4); // 40% opacity for drift effect
+    }
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_1 -->
+</div>
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 transition-all duration-300 ease-in-out" id="navbar">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 bg-transparent flat no shadows">
+<!-- Mobile Menu Icon (Placeholder for functionality) -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Brand Logo -->
+<a class="font-display-md text-display-md text-primary dark:text-primary-fixed italic tracking-tight" href="#">Prakriti</a>
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex gap-gutter items-center">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Profile</a></li>
+</ul>
+<!-- Trailing Icons -->
+<div class="flex gap-unit items-center">
+<button aria-label="shopping_cart" class="text-on-surface-variant hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[819px] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="A serene, high-end lifestyle flat-lay photography of natural botanical ingredients like sage leaves, sandalwood, and soft floral petals arranged minimally on a textured linen background. The lighting is soft and natural, evoking a premium, organic skincare aesthetic in light mode. The color palette emphasizes muted greens, taupes, and soft creams." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFTV7ag84GHk7NF9U7Th7TRkiwLSjJdM4Gkj30E2cjCnmfiP6qAydiOUKQoAVZRqytHc_sL-s-kL6DO5RVFS24MSZBe_jX9MNnCn8aAUzokozeHzGjjG5JRXWj6gUZN_CLIPBTukUwslw4bdIve1pBLC2c2OGUtQ_zSi-UJh2kH7gb10u1e2iIR2ytgTeFiOC5mvTB6DuMCE4KAmdf5f4Llic77VuU1PhInMjmGmcFYsMF-HITf_zA-g')"></div>
+<div class="absolute inset-0 bg-surface/30 z-10 backdrop-blur-[2px]"></div>
+<div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col items-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-gutter drop-shadow-md hidden md:block">Glow with Nature</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-gutter drop-shadow-md md:hidden">Glow with Nature</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">Discover the essence of botanical purity. Premium herbal skincare formulated for conscious beauty.</p>
+<a class="bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider py-4 px-12 rounded-full hover:bg-tertiary transition-colors duration-300 inline-flex items-center gap-2" href="#shop">
+                    Shop Now
+                </a>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-section-gap"></div>
+<!-- Featured/Bestsellers -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Bestsellers</h2>
+<a class="font-label-md text-label-md text-secondary uppercase tracking-widest hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-dim rounded-lg overflow-hidden relative mb-6 transition-transform duration-500 group-hover:-translate-y-2">
+<img class="object-cover w-full h-full" data-alt="A minimalist product shot of a frosted glass face serum bottle with a bamboo dropper top, sitting on a smooth taupe stone slab. A single delicate green fern leaf lies next to it. Soft, diffused lighting creates a serene, premium organic feel. The background is a clean cream color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8cvjouEw5cCQVD64QkXZqupJmeluuCwNmwInhLnTdUJwdBofw7fozoQ8U4Ih44CzZj49pz0rpXN8BAF1c6lCYV2GcM1CWTrAKffxu3FTwPq9G90ylNth3faYBi6Mt0evX6VJJuU8jEQreY8VSUsrZqgYLUbHSBrCz-ykWN8rZYVLAfUIOlg18fUhloQVinQxcC1dy_rBxXbA3eliSux2u1JI5P93QYzbcO4vTtY1gfviGhMDp0ppDDw"/>
+<div class="absolute top-4 left-4 bg-secondary/10 text-secondary font-label-md text-caption px-3 py-1 rounded-full uppercase tracking-wider">
+                            Organic
+                        </div>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-background mb-2">Botanical Face Serum</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$48.00</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-dim rounded-lg overflow-hidden relative mb-6 transition-transform duration-500 group-hover:-translate-y-2">
+<img class="object-cover w-full h-full" data-alt="A high-end product photograph of a rich, creamy body butter in a minimal matte terracotta jar. The jar is placed on a soft linen cloth with gentle folds. Warm, natural sunlight highlights the creamy texture of the product. The color palette relies on earthy taupes, creams, and terracotta." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuO4EAsVZN_LJMvGX96QxzOXgj_PHxmPiMqMNSGLMuEFF2llla9EwzOEdQud1u6hhVKGkM_0zucCn-98Qynez9u7lLt5oWkcu90ZW01nkBDRox3987UcDXboGefnpK2TRwXQWWpq0x4RJDNQdAjCh1aKkCatUlz4WTZ3ji2d2BtsV1sghhz0TxKQQuzfAlBYLLDP92CxAzcHgDNHwAUlOtLps9oVi_0p-9iaBdcP9b_ZjlmBdSnUOtcQ"/>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-background mb-2">Nourishing Body Butter</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$36.00</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-dim rounded-lg overflow-hidden relative mb-6 transition-transform duration-500 group-hover:-translate-y-2">
+<img class="object-cover w-full h-full" data-alt="An elegant minimalist photo of a sleek amber glass hair oil bottle beside a wooden wide-tooth comb on a light cream surface. Subtle dappled shadows from tree branches fall across the scene, creating an organic, calming atmosphere suitable for a premium herbal skincare brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRAYdr9S04jpWaFj6vQxyVc9GdBDU5xzYuDmA2fP6W5igBZaibk1zil0t64kChZNGGWc0-8RcX8ot4l_3jWr7NxMTuDwF0fi0Ga8VxmKcXGfCeTH3Mb-5h1n8uuzkckmIkISbAQd5zxsukEsF9dyA2xn7pa3YjpM33bJT8J-wbmlUCi8BAodS_WVRJRtls0lBwZKyBVqLVW8FxElVYwHBC0coM2d6VWKXu1nm5a8fmSqsn9rQr0Myeag"/>
+<div class="absolute top-4 left-4 bg-secondary/10 text-secondary font-label-md text-caption px-3 py-1 rounded-full uppercase tracking-wider">
+                            Vegan
+                        </div>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-background mb-2">Herbal Hair Elixir</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$42.00</p>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-section-gap"></div>
+<!-- Shop by Category (Asymmetric Layout) -->
+<section class="bg-surface-container py-section-gap" id="shop">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Shop by Category</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Curated collections for your essential nature.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Face (Large) -->
+<a class="md:col-span-8 group relative h-96 md:h-[600px] rounded-lg overflow-hidden block" href="#">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, soft-focus lifestyle shot of a woman with glowing, clear skin gently applying a lightweight cream to her face. She is surrounded by a soft, airy light-mode environment with hints of subtle greenery out of focus in the background. The mood is calm, pure, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFMfmWNJOEXR1CG2nHw2j2J-oC3H-haUjWRYxPbGEVJdGKgOMHdIgWSlNiPUpgv9zOkK1dLPzzvBCLUdHpfWTmgcswxXsaO8v9X0-wsoXn9mFr0rUh4VUbv0JYMv6Wk8z3bSuh5AyMeL1a_AwCK8HRJS058EI_SgvKdUiB0rEci3FEAvyG0Nc0eDEyQOy_-bBuyiWWEtXMDbgHUXwMqaZEMtrtOqoRTfVnAJvAMMMKmA6-SJEu9SH6dw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-display-md text-display-md text-surface-container-lowest mb-2">Face</h3>
+<span class="font-label-md text-label-md text-surface-container-lowest uppercase tracking-wider border-b border-surface-container-lowest pb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore</span>
+</div>
+</a>
+<!-- Stacked (Body & Oils) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<a class="group relative flex-1 min-h-[250px] rounded-lg overflow-hidden block" href="#">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A minimal still life showing organic body care elements: a natural sea sponge, a bar of artisanal herbal soap, and a smooth river stone, arranged on a pale taupe textured surface. Soft, high-key lighting creates a serene, spa-like aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8XIQtuEYH93Mz43SFYXgXzgwW_0q0Q06k8GtX64BSHOvku-iL7XEswo4RUc3LGPcQast9hPHQNHWHXrV9WTzR5FG_P83tHDusEGy95w1k9eQqOH8DNv8VFSTvSCxi3yKn9vqU5d0Wo2cN6IbmpncVwXaXN17o9vkp0mdabFrRzB5tyrtJ9U0koVqgbwlWULOfoo0mf36d0G6pV3UCefGapIE8_uTJfJsIBL7IKl_ZBaZ8BQ4vHeVzNg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/50 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline-lg text-headline-lg text-surface-container-lowest">Body</h3>
+</div>
+</a>
+<a class="group relative flex-1 min-h-[250px] rounded-lg overflow-hidden block" href="#">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A macro shot of golden botanical oil being poured delicately into a small ceramic bowl, with loose chamomile flowers scattered nearby. The lighting is warm and bright, highlighting the rich texture of the oil against a minimalist cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMMuZyH8Fd1EqhFWrK7tjQiLgtRQpNcE_CWILbUhLooTooKC0UzmulE5zFzjTKtkZLRAprXdx_Rgsr_U-esErqMBsGxNUzt9a4bmPb2PCsg61cgcPskYvlplmUd3lQd6SQgivAk0Ej-FcmWwhw2pDVP326ltBDokSLatabXqKl-uI6xj1OStK7znW1W4gYmSKjTvoKVNWdxhBlCmRUkKVbdE4bx9iPmNPdS4kB7xceHv4sG74tinFLRA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/50 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline-lg text-headline-lg text-surface-container-lowest">Oils</h3>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story Teaser -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<h2 class="font-display-md text-display-md text-primary mb-6">Why Prakriti</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Rooted in ancient herbal wisdom and refined for the modern conscious consumer, Prakriti translates to "Nature" or "Essential Quality." We believe that true luxury lies in simplicity and efficacy. Every ingredient is sustainably sourced, minimally processed, and thoughtfully blended to restore your skin's natural harmony.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 font-body-md text-body-md text-on-background">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+                            100% Plant-Based Ingredients
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-body-md text-on-background">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+                            Cruelty-Free &amp; Vegan
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-body-md text-on-background">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+                            Minimalist Recyclable Packaging
+                        </li>
+</ul>
+<a class="text-secondary font-label-md text-label-md uppercase tracking-wider border-b border-secondary pb-1 hover:text-primary hover:border-primary transition-colors duration-300" href="#">Read Our Story</a>
+</div>
+<div class="flex-1 relative">
+<div class="aspect-square rounded-full overflow-hidden border-8 border-surface-container/50">
+<img class="object-cover w-full h-full" data-alt="An artistic, abstract photograph of lush green botanical leaves overlapping against a bright, hazy sunlight backdrop. The composition is circular, emphasizing organic shapes and a feeling of pure, unadulterated nature. The overall tone is fresh, airy, and vital." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVqnNx8TGZQFzWKbqjLVjVNH62tWmOA23uOd2iPNzBtY9KYLu69LLkiVVBa07qbGKosd2fQhvYh3W2uOWpg6aHiI0aaMDq9ooiD6gexHy5VhRuxa7T30JewzDKQu0MECgyGyUV8hcCqG8OWgQuwcAHXaWlUE8f2afw-NeZltwXXfpUJURNnUH6NFV1ytSDLvkzoIhX0pMZzKF0bCzMQePchReeJ2TKfhhYCUw2fEArUqCf0Ig3wXEe4g"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Reviews -->
+<section class="bg-surface-dim py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-center text-primary mb-16">Whispers of Nature</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-outline-variant" data-icon="format_quote" data-weight="fill" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">"The Botanical Face Serum transformed my morning routine. It feels incredibly light yet deeply nourishing. Truly a grounding experience."</p>
+<p class="font-label-md text-label-md text-on-background uppercase tracking-widest">— Elena M.</p>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-outline-variant" data-icon="format_quote" data-weight="fill" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">"I appreciate the minimalist packaging and the pure, earthy scent of the Body Butter. It's subtle luxury at its finest."</p>
+<p class="font-label-md text-label-md text-on-background uppercase tracking-widest">— Julian R.</p>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-outline-variant" data-icon="format_quote" data-weight="fill" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star_half" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">"Finally, skincare that doesn't overwhelm my sensitive skin. The herbal ingredients feel so pure and restorative."</p>
+<p class="font-label-md text-label-md text-on-background uppercase tracking-widest">— Sarah K.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Signup -->
+<section class="py-section-gap">
+<div class="max-w-3xl mx-auto px-margin-mobile text-center">
+<h2 class="font-display-md text-display-md text-primary mb-4">Join the Ritual</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">Subscribe to receive gentle reminders, exclusive botanical insights, and 10% off your first order.</p>
+<form class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<div class="relative w-full max-w-sm">
+<input class="w-full bg-transparent border-b border-outline-variant py-3 px-2 font-body-md text-body-md text-on-background focus:outline-none focus:border-primary focus:ring-0 transition-colors placeholder:text-outline-variant" placeholder="Your email address" type="email"/>
+</div>
+<button class="w-full sm:w-auto bg-transparent border border-primary text-primary font-label-md text-label-md uppercase tracking-wider py-3 px-8 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300" type="submit">
+                        Subscribe
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col items-center md:items-start mb-10 md:mb-0">
+<span class="font-display-md text-display-md text-primary dark:text-primary-fixed mb-4 italic tracking-tight">Prakriti</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left max-w-xs">
+                    Rooted in nature. Elevated through simplicity.
+                </p>
+</div>
+<div class="flex flex-col items-center md:items-start mb-10 md:mb-0">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-6">Explore</h4>
+<ul class="flex flex-col gap-3 text-center md:text-left">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100 transition-opacity" href="#">Shop All</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100 transition-opacity" href="#">Our Story</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100 transition-opacity" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-6">Support</h4>
+<ul class="flex flex-col gap-3 text-center md:text-left mb-8">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100 transition-opacity" href="#">Contact Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors opacity-90 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/30 text-center md:text-left">
+<p class="font-caption text-caption text-on-surface-variant">© 2024 Prakriti Skincare. Rooted in Nature.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('bg-surface/80', 'bg-surface/95');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('bg-surface/95', 'bg-surface/80');
+            }
+        });
+    </script>
+</body></html>

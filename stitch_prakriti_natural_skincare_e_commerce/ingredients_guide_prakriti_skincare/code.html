@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Ingredients - Prakriti Botanical Skincare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#febb84",
+                    "surface-dim": "#e0d9cb",
+                    "on-tertiary-container": "#fbfff2",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#d8e8c2",
+                    "tertiary-container": "#697a5f",
+                    "surface-variant": "#e9e2d3",
+                    "inverse-surface": "#343027",
+                    "on-secondary-fixed": "#2e1500",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#45483f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#111f0b",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3d4b2f",
+                    "on-secondary-container": "#79491b",
+                    "on-primary-container": "#fcfff1",
+                    "inverse-on-surface": "#f8f0e1",
+                    "inverse-primary": "#bccca7",
+                    "on-primary": "#ffffff",
+                    "secondary": "#855324",
+                    "primary-container": "#6b7a5a",
+                    "on-secondary-fixed-variant": "#693c0f",
+                    "surface-container": "#f5edde",
+                    "surface-container-high": "#efe7d9",
+                    "background": "#fff8ef",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdcc2",
+                    "primary": "#536143",
+                    "surface-container-low": "#fbf3e4",
+                    "surface-bright": "#fff8ef",
+                    "outline-variant": "#c5c8bc",
+                    "surface-tint": "#546345",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#75786e",
+                    "tertiary-fixed-dim": "#b9ccad",
+                    "primary-fixed-dim": "#bccca7",
+                    "on-surface": "#1e1b13",
+                    "on-tertiary-fixed-variant": "#3b4b33",
+                    "surface": "#fff8ef",
+                    "on-primary-fixed": "#131f07",
+                    "secondary-fixed-dim": "#fbb981",
+                    "on-background": "#1e1b13",
+                    "tertiary-fixed": "#d5e8c8",
+                    "surface-container-highest": "#e9e2d3",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#506148"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { scroll-behavior: smooth; }
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 300ms, transform 300ms; }
+        .modal-leave { opacity: 1; transform: scale(1); }
+        .modal-leave-active { opacity: 0; transform: scale(0.95); transition: opacity 300ms, transform 300ms; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md transition-all duration-300 border-b border-surface-container-low dark:border-surface-container-high" id="navbar">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<button class="md:hidden text-primary dark:text-primary-fixed focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md uppercase tracking-wider" href="#">Shop</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md uppercase tracking-wider" href="#">About</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md uppercase tracking-wider" href="#">Rituals</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md uppercase tracking-wider" href="#">Sustainability</a>
+</nav>
+<a class="font-display-md text-display-md text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity" href="#">
+                Prakriti
+            </a>
+<div class="flex gap-4 items-center">
+<button aria-label="shopping_bag" class="text-primary dark:text-primary-fixed hover:opacity-80 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+<button aria-label="person" class="text-primary dark:text-primary-fixed hover:opacity-80 active:scale-95 transition-transform hidden md:block">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] md:pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="text-center mb-16 md:mb-24">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Our Ingredients</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Explore the botanical symphony that powers our formulations. Each ingredient is ethically sourced and chosen for its profound, natural efficacy.
+            </p>
+</div>
+<!-- Ingredients Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 justify-items-center">
+<!-- Turmeric -->
+<button class="group flex flex-col items-center gap-4 focus:outline-none" onclick="openModal('turmeric')">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-surface-container-high relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(58,74,50,0.15)]">
+<img class="w-full h-full object-cover" data-alt="Close up of fresh turmeric root slices dusted with vibrant yellow turmeric powder on a textured cream stone surface. Warm natural lighting, high-end editorial food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7bN1-ac1eLjt1tbocAl5dhsgfhBdSK5ftqpalRgHp9LnAcXCO8jQ4YHQAC2PGiKJUf0EW9Q27OHYBhSQYs_IzQ0iRmhocZ5ksPkZB9qAEMHFYxsZtem9QPE4ttLBO_HQcGnRlDomnxjRe4IzEjE2vzZBIkFEHGbzlY6aWS_2wywJz2kjRTf5qzySiKZALmLkmMxHPWhYBuwXS79S3wK1b-8bJQWY5s1_k6D2AhOxY7l2GIBUrQLAk6g"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest group-hover:text-primary transition-colors">Turmeric</span>
+</button>
+<!-- Rosehip -->
+<button class="group flex flex-col items-center gap-4 focus:outline-none" onclick="openModal('rosehip')">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-surface-container-high relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(58,74,50,0.15)]">
+<img class="w-full h-full object-cover" data-alt="Vibrant red rosehips with water droplets resting on rustic mossy wood alongside textured sage green leaves. Macro photography, fresh morning dew aesthetic, earthy organic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqAVlTqQnGir0R31lPtCetk0_XjtFwwj3DsmkvO_I7NuwGLm3s--GrdTgRCzhrKlZNDk9vUyZt7i_iD5775CDDmC82DLouc_0mXwIvo2T4AuE8o39y5ooFCkhLZLHNPtl0otiuH2M0EFo-iFn69XKJfXl0fskka6rD9ldooxsGhNmFRccyfAcwvXZpFodf5t6JWmKccjUTTTdb9Xs1ZXhW4ufFndkOVrL0r1MHXiNqzb5_3GGR8rPG1w"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest group-hover:text-primary transition-colors">Rosehip</span>
+</button>
+<!-- Neem -->
+<button class="group flex flex-col items-center gap-4 focus:outline-none" onclick="openModal('neem')">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-surface-container-high relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(58,74,50,0.15)]">
+<img class="w-full h-full object-cover" data-alt="Fresh green neem leaves with water droplets resting flat on a porous light cream stone surface. High quality minimalist botanical photography, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC07p08Yz4EDl098u4-NQ9SvjeBvdalK_jBi2E_Bhej3UcqBR27iKEKyWgSQlPUJTkWwfF9INFWwvzJR5fS6dRrkfMmAmhuwoDoI6I7BzGXK9f7cJ_7fQnhZT0eOs2fDYVIR0pIC-Q5oeObFedXcydVoMTyn52XotnXRYtomiOWAINQo5_rhif_z2gspZQm65UgLVZl3cOLU_dBObiJp6fVe_OyUBzlpbcf9Wbfuyi8M-ZLq0J9EHJHg"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest group-hover:text-primary transition-colors">Neem</span>
+</button>
+<!-- Sage -->
+<button class="group flex flex-col items-center gap-4 focus:outline-none" onclick="openModal('sage')">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-surface-container-high relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(58,74,50,0.15)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, professional close-up photograph of fresh sage leaves with soft dew drops, resting on a rustic wooden surface. Natural, organic, minimalist composition, sage green and earthy tones. #F5F1E8 background." src="https://lh3.googleusercontent.com/aida/AP1WRLtRR6bVZzBVa6tfYG4x6hS2cE55KZAHvt2CRzx15FYH4FMj7cx5zzCcCTxN5A4prn0SqlzXp8LF1AmOlMKJ_pYKsgPrR3B-9fbLh33vH6ErwiqfDJJFythHeJTS8sKtzEf7IEkW5oX2zg8h82Djsonog1Kx6-1xrKHnnG9wTD-h2Bfg_lCj8El9vm7mqAyzegoL8ZG2kYakoZYLJBejawVHkSY6YoITkEoHFr1l75rcTuPYUAt4Xi1GpiLp"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest group-hover:text-primary transition-colors">Sage</span>
+</button>
+<!-- Lavender -->
+<button class="group flex flex-col items-center gap-4 focus:outline-none" onclick="openModal('lavender')">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-surface-container-high relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(58,74,50,0.15)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, professional close-up photograph of organic dried lavender sprigs on a neutral cream stone surface. Soft natural lighting, minimalist composition, earthy tones, macro photography. #F5F1E8 background." src="https://lh3.googleusercontent.com/aida/AP1WRLuCH8eF8SeqX457OZpk8Xs_qKUJ-qvIqQF4lmzqSt92Ssa3YtYhGQrifB1vKaR-nlfSPCJWB-IKVRhfIAHXYliTzlNIZVNY1T74o5sxEsLXmfgZhfDQfi0MoybV4XiTNoxuqKRBDBSqNfLq-pAwetm-wRRQUPSVsxHxAZ33-wkKaMu2LX8NGSAG-SCetq2fo1q5gB3rGSzghxvyU2lJT54p2_BigBTnHqgAX5rxPavyo2h2s6IsXgZIfgFi"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest group-hover:text-primary transition-colors">Lavender</span>
+</button>
+</div>
+</main>
+<!-- Modal Container -->
+<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-12" id="ingredient-modal">
+<div class="absolute inset-0 bg-surface/95 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+<div class="relative bg-surface-container-lowest w-full max-w-5xl rounded-lg shadow-[0_24px_48px_rgba(58,74,50,0.1)] overflow-hidden flex flex-col md:flex-row h-[90vh] md:h-[80vh]">
+<button class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-surface/80 rounded-full text-on-surface hover:text-primary transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Modal Image Section -->
+<div class="w-full md:w-1/2 h-64 md:h-full relative bg-surface-dim">
+<img alt="" class="w-full h-full object-cover" id="modal-img" src=""/>
+</div>
+<!-- Modal Content Section -->
+<div class="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto flex flex-col">
+<h2 class="font-display-md text-display-md text-primary mb-2" id="modal-title">Ingredient</h2>
+<p class="font-label-md text-label-md text-secondary tracking-widest uppercase mb-6" id="modal-subtitle">Botanical Name</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 flex-grow" id="modal-desc">
+                    Description goes here.
+                </p>
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 border-b border-surface-container-high pb-2">Featured In</h3>
+<div class="flex flex-col gap-4" id="modal-products">
+<!-- Products injected here -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-high dark:bg-inverse-surface border-t border-surface-container-highest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto gap-gutter">
+<div class="font-display-md text-display-md text-primary dark:text-primary-fixed mb-8 md:mb-0">
+                Prakriti
+            </div>
+<nav class="flex flex-col md:flex-row gap-6 md:gap-8 items-center text-center md:text-left mb-8 md:mb-0">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Contact Us</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface text-center md:text-right">
+                © 2024 Prakriti Botanical Skincare. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        const ingredientData = {
+            turmeric: {
+                title: "Turmeric",
+                subtitle: "Curcuma longa",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD7bN1-ac1eLjt1tbocAl5dhsgfhBdSK5ftqpalRgHp9LnAcXCO8jQ4YHQAC2PGiKJUf0EW9Q27OHYBhSQYs_IzQ0iRmhocZ5ksPkZB9qAEMHFYxsZtem9QPE4ttLBO_HQcGnRlDomnxjRe4IzEjE2vzZBIkFEHGbzlY6aWS_2wywJz2kjRTf5qzySiKZALmLkmMxHPWhYBuwXS79S3wK1b-8bJQWY5s1_k6D2AhOxY7l2GIBUrQLAk6g",
+                desc: "A golden root celebrated in Ayurvedic traditions for its potent anti-inflammatory properties. Curcumin, its active compound, gently brightens the complexion, evens out skin tone, and restores a natural, healthy radiance.",
+                products: [
+                    { name: "Golden Glow Mask", price: "$48.00" },
+                    { name: "Radiance Facial Oil", price: "$65.00" }
+                ]
+            },
+            rosehip: {
+                title: "Rosehip",
+                subtitle: "Rosa canina",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBqAVlTqQnGir0R31lPtCetk0_XjtFwwj3DsmkvO_I7NuwGLm3s--GrdTgRCzhrKlZNDk9vUyZt7i_iD5775CDDmC82DLouc_0mXwIvo2T4AuE8o39y5ooFCkhLZLHNPtl0otiuH2M0EFo-iFn69XKJfXl0fskka6rD9ldooxsGhNmFRccyfAcwvXZpFodf5t6JWmKccjUTTTdb9Xs1ZXhW4ufFndkOVrL0r1MHXiNqzb5_3GGR8rPG1w",
+                desc: "Often referred to as nature's retinol. Extracted from the seeds of wild rose bushes, it is intensely rich in Vitamin A, Vitamin C, and essential fatty acids. It works deeply to promote cellular turnover, fade hyperpigmentation, and improve skin elasticity without irritation.",
+                products: [
+                    { name: "Regenerating Night Serum", price: "$85.00" },
+                    { name: "Botanical Restorative Cream", price: "$52.00" }
+                ]
+            },
+            neem: {
+                title: "Neem",
+                subtitle: "Azadirachta indica",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAC07p08Yz4EDl098u4-NQ9SvjeBvdalK_jBi2E_Bhej3UcqBR27iKEKyWgSQlPUJTkWwfF9INFWwvzJR5fS6dRrkfMmAmhuwoDoI6I7BzGXK9f7cJ_7fQnhZT0eOs2fDYVIR0pIC-Q5oeObFedXcydVoMTyn52XotnXRYtomiOWAINQo5_rhif_z2gspZQm65UgLVZl3cOLU_dBObiJp6fVe_OyUBzlpbcf9Wbfuyi8M-ZLq0J9EHJHg",
+                desc: "A highly revered purifier in herbal medicine. Neem's natural antibacterial and clarifying properties make it exceptional for congested or blemish-prone skin. It soothes irritation while helping to maintain a clear, balanced complexion.",
+                products: [
+                    { name: "Clarifying Herbal Cleanser", price: "$38.00" },
+                    { name: "Purifying Spot Treatment", price: "$24.00" }
+                ]
+            },
+            sage: {
+                title: "Sage",
+                subtitle: "Salvia officinalis",
+                img: "https://lh3.googleusercontent.com/aida/AP1WRLtRR6bVZzBVa6tfYG4x6hS2cE55KZAHvt2CRzx15FYH4FMj7cx5zzCcCTxN5A4prn0SqlzXp8LF1AmOlMKJ_pYKsgPrR3B-9fbLh33vH6ErwiqfDJJFythHeJTS8sKtzEf7IEkW5oX2zg8h82Djsonog1Kx6-1xrKHnnG9wTD-h2Bfg_lCj8El9vm7mqAyzegoL8ZG2kYakoZYLJBejawVHkSY6YoITkEoHFr1l75rcTuPYUAt4Xi1GpiLp",
+                desc: "An astringent powerhouse. Sage leaf extract helps to regulate sebum production and tone the skin. Its wealth of antioxidants protects against environmental stressors, keeping the skin firm and resilient.",
+                products: [
+                    { name: "Balancing Toning Mist", price: "$32.00" }
+                ]
+            },
+            lavender: {
+                title: "Lavender",
+                subtitle: "Lavandula angustifolia",
+                img: "https://lh3.googleusercontent.com/aida/AP1WRLuCH8eF8SeqX457OZpk8Xs_qKUJ-qvIqQF4lmzqSt92Ssa3YtYhGQrifB1vKaR-nlfSPCJWB-IKVRhfIAHXYliTzlNIZVNY1T74o5sxEsLXmfgZhfDQfi0MoybV4XiTNoxuqKRBDBSqNfLq-pAwetm-wRRQUPSVsxHxAZ33-wkKaMu2LX8NGSAG-SCetq2fo1q5gB3rGSzghxvyU2lJT54p2_BigBTnHqgAX5rxPavyo2h2s6IsXgZIfgFi",
+                desc: "Beyond its calming aromatherapeutic benefits, lavender is deeply soothing for the skin. It helps to reduce redness, balance moisture levels, and encourage a tranquil healing process for sensitive or stressed complexions.",
+                products: [
+                    { name: "Calming Moisture Veil", price: "$45.00" },
+                    { name: "Sleep Ritual Bath Soak", price: "$28.00" }
+                ]
+            }
+        };
+
+        const modal = document.getElementById('ingredient-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSubtitle = document.getElementById('modal-subtitle');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalProducts = document.getElementById('modal-products');
+
+        function openModal(ingredientKey) {
+            const data = ingredientData[ingredientKey];
+            if (!data) return;
+
+            modalImg.src = data.img;
+            modalTitle.textContent = data.title;
+            modalSubtitle.textContent = data.subtitle;
+            modalDesc.textContent = data.desc;
+
+            modalProducts.innerHTML = '';
+            data.products.forEach(prod => {
+                modalProducts.innerHTML += `
+                    <a href="#" class="flex items-center justify-between p-4 bg-surface rounded hover:bg-surface-container-high transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-dim rounded flex-shrink-0"></div>
+                            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">${prod.name}</span>
+                        </div>
+                        <span class="font-label-md text-label-md text-on-surface-variant">${prod.price}</span>
+                    </a>
+                `;
+            });
+
+            modal.classList.remove('hidden');
+            // Small delay to allow display:block to apply before animating opacity
+            setTimeout(() => {
+                modal.firstElementChild.classList.add('opacity-100');
+                modal.lastElementChild.classList.add('opacity-100', 'scale-100');
+                modal.lastElementChild.classList.remove('opacity-0', 'scale-95');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.lastElementChild.classList.remove('opacity-100', 'scale-100');
+            modal.lastElementChild.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Handle scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>

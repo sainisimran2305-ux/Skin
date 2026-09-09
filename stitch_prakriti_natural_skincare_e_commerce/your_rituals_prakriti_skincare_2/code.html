@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti - Your Daily Rituals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d8e8c2",
+                        "on-primary-fixed": "#131f07",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#e0d9cb",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3d4b2f",
+                        "on-secondary-container": "#79491b",
+                        "on-tertiary-fixed": "#111f0b",
+                        "on-background": "#1e1b13",
+                        "surface-bright": "#fff8ef",
+                        "outline": "#75786e",
+                        "surface-variant": "#e9e2d3",
+                        "on-primary-container": "#fcfff1",
+                        "tertiary-container": "#697a5f",
+                        "outline-variant": "#c5c8bc",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#b9ccad",
+                        "tertiary-fixed": "#d5e8c8",
+                        "primary": "#536143",
+                        "tertiary": "#506148",
+                        "on-surface-variant": "#45483f",
+                        "on-tertiary-fixed-variant": "#3b4b33",
+                        "surface-container-highest": "#e9e2d3",
+                        "on-surface": "#1e1b13",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#546345",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#693c0f",
+                        "inverse-on-surface": "#f8f0e1",
+                        "on-tertiary-container": "#fbfff2",
+                        "surface-container-low": "#fbf3e4",
+                        "primary-container": "#6b7a5a",
+                        "surface": "#fff8ef",
+                        "primary-fixed-dim": "#bccca7",
+                        "background": "#fff8ef",
+                        "surface-container": "#f5edde",
+                        "surface-container-high": "#efe7d9",
+                        "on-secondary-fixed": "#2e1500",
+                        "inverse-primary": "#bccca7",
+                        "secondary": "#855324",
+                        "inverse-surface": "#343027",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#febb84",
+                        "secondary-fixed-dim": "#fbb981"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "display-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-md": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            bottom: -20px;
+            width: 1px;
+            background-color: #d8e8c2; /* primary-fixed */
+            z-index: 0;
+        }
+        .step-item:last-child .timeline-line::before {
+            display: none;
+        }
+        
+        /* Checkbox custom style */
+        input[type="checkbox"]:checked + div {
+            background-color: #536143; /* primary */
+            border-color: #536143;
+        }
+        input[type="checkbox"]:checked + div span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="bg-surface/80 backdrop-blur-md sticky top-0 w-full z-50 transition-all duration-300 ease-in-out border-b-0 border-transparent shadow-[0_1px_0_0_rgba(233,226,211,0.5)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit md:py-4 max-w-container-max mx-auto">
+<!-- Mobile Menu Icon (hidden on md) -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<!-- Navigation Links (hidden on mobile) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant hover:opacity-80 transition-opacity duration-300" href="#">Shop</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant hover:opacity-80 transition-opacity duration-300" href="#">About</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-primary border-b border-primary pb-1 hover:opacity-80 transition-opacity duration-300" href="#">Rituals</a>
+</div>
+<!-- Brand Logo -->
+<div class="absolute left-1/2 -translate-x-1/2 flex items-center">
+<a class="font-display-md text-display-md text-primary tracking-tighter hover:opacity-80 transition-opacity duration-300" href="#">Prakriti</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary transition-colors p-2 hover:opacity-80 duration-300">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+<button class="hover:text-primary transition-colors p-2 hover:opacity-80 duration-300 hidden md:block">
+<span class="material-symbols-outlined text-xl">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 md:py-24">
+<!-- Header Section -->
+<header class="text-center mb-16 max-w-2xl mx-auto">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-primary mb-4">Your Daily Rituals</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Cultivating balance through mindful, botanical care routines designed to ground your spirit and nourish your skin.</p>
+</header>
+<!-- Progress & Tabs Container -->
+<div class="max-w-3xl mx-auto mb-16">
+<!-- Progress -->
+<div class="flex items-center justify-between mb-8">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Morning Progress</span>
+<span class="font-label-md text-label-md text-primary">60% Complete</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden mb-12">
+<div class="bg-primary h-full rounded-full transition-all duration-700 ease-out" style="width: 60%;"></div>
+</div>
+<!-- Tabs -->
+<div class="flex justify-center gap-8 border-b border-surface-variant mb-12">
+<button class="font-label-md text-label-md uppercase tracking-wider pb-4 border-b-2 border-primary text-primary transition-colors">
+                    Morning
+                </button>
+<button class="font-label-md text-label-md uppercase tracking-wider pb-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors">
+                    Evening
+                </button>
+</div>
+<!-- Ritual Flow / Checklist -->
+<div class="space-y-12">
+<!-- Step 1 (Completed) -->
+<div class="step-item relative flex gap-6 md:gap-8 group opacity-60">
+<div class="timeline-line flex-shrink-0 z-10 pt-2">
+<label class="cursor-pointer relative flex items-center justify-center">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-8 h-8 rounded-full border border-primary flex items-center justify-center transition-colors bg-primary">
+<span class="material-symbols-outlined text-on-primary text-sm icon-fill">check</span>
+</div>
+</label>
+</div>
+<div class="flex-grow flex flex-col md:flex-row gap-6 items-start pb-8 border-b border-surface-container-low group-last:border-transparent group-last:pb-0">
+<div class="flex-grow space-y-3">
+<div class="flex items-center gap-3">
+<span class="font-caption text-caption text-secondary uppercase tracking-widest bg-secondary/10 px-2 py-1 rounded">Step 1</span>
+<h3 class="font-headline-lg-mobile md:text-headline-lg-mobile text-on-surface">Gentle Cleansing</h3>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Purifying Botanical Wash</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                Massage 2 pumps onto damp skin using upward circular motions. Breathe in the grounding scent of vetiver and cedar. Rinse with lukewarm water and pat dry.
+                            </p>
+</div>
+<div class="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 grayscale" data-alt="A serene close-up photograph of a minimalist frosted glass bottle with a pump dispenser containing a light green botanical cleanser, placed on a rough-hewn stone surface with soft morning light casting gentle shadows, exuding a premium, organic skincare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIFwwZSh3Z-TxC-0B0r0NGHVwnwO4HwJAuvXtvCGtcDRVZk8pLqNmOi9obAbgYQBdTbqOc358fcWx8Wo8qo37sp5Ba2jtbgxpF2xju6AviCu2vDJWH7xk27SM3IWkI8O8-9JH_yRKsVXszUAPyWnpB7Zw_vAJzQmb-kmQBeFtXTH4CN2zpEW6j-cYiFVghH8fMVP_wsUxxK99Xk_OJztgp4wEcz_ZsmR7ccuFY3BXquuPuE_ZplsFwyQ"/>
+</div>
+</div>
+</div>
+<!-- Step 2 (Completed) -->
+<div class="step-item relative flex gap-6 md:gap-8 group opacity-60">
+<div class="timeline-line flex-shrink-0 z-10 pt-2">
+<label class="cursor-pointer relative flex items-center justify-center">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-8 h-8 rounded-full border border-primary flex items-center justify-center transition-colors bg-primary">
+<span class="material-symbols-outlined text-on-primary text-sm icon-fill">check</span>
+</div>
+</label>
+</div>
+<div class="flex-grow flex flex-col md:flex-row gap-6 items-start pb-8 border-b border-surface-container-low group-last:border-transparent group-last:pb-0">
+<div class="flex-grow space-y-3">
+<div class="flex items-center gap-3">
+<span class="font-caption text-caption text-secondary uppercase tracking-widest bg-secondary/10 px-2 py-1 rounded">Step 2</span>
+<h3 class="font-headline-lg-mobile md:text-headline-lg-mobile text-on-surface">Toning Mist</h3>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Damask Rose Hydrosol</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                Close eyes and generously mist over face and neck. Gently press the mist into the skin with palms to enhance absorption and awaken the senses.
+                            </p>
+</div>
+<div class="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 grayscale" data-alt="A macro shot of a fine mist being sprayed from a sleek amber glass spray bottle, backlit by bright morning sunlight against a clean cream background, creating a refreshing and ethereal mood typical of high-end beauty editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCX0nqNrgPKufhmLZX5bu2hLjS6JR2Rg7Hn9exUHdEpPg65KIfRFLF4LJOs0_44a9wpt3iVnMFrswz7ddhKuQ4a1449mq5f1JugC6jejpS3MMyTDllpPyifdh_nripjeevcSSSNkrpDTNOYARlJUWJM63JBFR9bsEzrZoQiBQyGCOcoYPJKnVgnpi-b87jS1AspHIzNw5Hrvn7VfjYJnmBC1f6UfXU_LWA8Xua8-L1Nk5i-QiOe-7k7w"/>
+</div>
+</div>
+</div>
+<!-- Step 3 (Active/Pending) -->
+<div class="step-item relative flex gap-6 md:gap-8 group">
+<div class="timeline-line flex-shrink-0 z-10 pt-2">
+<label class="cursor-pointer relative flex items-center justify-center">
+<input class="peer sr-only" type="checkbox"/>
+<div class="w-8 h-8 rounded-full border border-outline flex items-center justify-center transition-colors peer-hover:border-primary">
+<span class="material-symbols-outlined text-on-primary text-sm opacity-0 transition-opacity">check</span>
+</div>
+</label>
+</div>
+<div class="flex-grow flex flex-col md:flex-row gap-6 items-start pb-8 border-b border-surface-container-low group-last:border-transparent group-last:pb-0">
+<div class="flex-grow space-y-3">
+<div class="flex items-center gap-3">
+<span class="font-caption text-caption text-secondary uppercase tracking-widest bg-secondary/10 px-2 py-1 rounded">Step 3</span>
+<h3 class="font-headline-lg-mobile md:text-headline-lg-mobile text-primary">Radiant Serum</h3>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Radiant Glow Face Serum</p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed max-w-lg">
+                                Warm 3-4 drops between fingertips. Press gently onto cheeks, forehead, and chin, then massage in upward strokes. Allow a moment for the nutrient-rich oils to fully penetrate before proceeding.
+                            </p>
+<!-- Interaction Button -->
+<div class="pt-4">
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md uppercase tracking-widest py-3 px-8 rounded transition-all duration-300 shadow-[0_4px_14px_0_rgba(58,74,50,0.15)] hover:shadow-[0_6px_20px_rgba(58,74,50,0.2)]">
+                                    Mark Complete
+                                </button>
+</div>
+</div>
+<div class="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded bg-surface-container overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover mix-blend-multiply" data-alt="A beautiful flat-lay composition featuring a clear glass dropper bottle with golden oil, resting next to scattered fresh sage leaves on a textured, light taupe surface. Soft, natural lighting enhances the organic, premium minimalist feel of the skincare product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzSbEaJEfpgXLNyCl_nG6eWPXN7uqLvJ1UNeMjvnAhujbMxdVLpGxcD_6gXCKZJkw_2BNBZXMHYQ3HhCfdk3UOuGaxEYvXt3_DH5-pgFjloC_hYFlacLbGkgunYyVRGDIWFZTBZ41wycx7NU6tBrwRbW2arD2_9t-C_LbeEOHIwf_rh6HztgOI2xWyxIyEt-7Pkoy8zWIvsKNCs8K1bNMdgKWFnn7N-eZcXkQxHQtVs9wC-1gTB7vCeA"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high w-full py-section-gap px-margin-mobile md:px-margin-desktop mt-auto">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="space-y-4">
+<div class="font-headline-lg text-headline-lg text-primary">Prakriti</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Essential nature in every drop. Mindful botanical care for the conscious spirit.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface mb-2">Explore</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Sustainability</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Shipping</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact</a>
+</div>
+<div class="w-full md:w-auto pt-8 md:pt-0 mt-8 md:mt-0 border-t border-surface-variant md:border-none flex items-end md:h-full">
+<span class="font-body-md text-body-md text-on-surface-variant">© 2024 Prakriti Herbals. All rights reserved.</span>
+</div>
+</div>
+</footer>
+</body></html>

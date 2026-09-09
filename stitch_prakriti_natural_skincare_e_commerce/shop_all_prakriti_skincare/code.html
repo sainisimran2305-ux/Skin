@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti | Our Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#d5e8c8",
+                    "outline": "#75786e",
+                    "surface-container-highest": "#e9e2d3",
+                    "on-secondary-container": "#79491b",
+                    "surface": "#fff8ef",
+                    "surface-container": "#f5edde",
+                    "primary": "#536143",
+                    "surface-bright": "#fff8ef",
+                    "on-surface": "#1e1b13",
+                    "secondary-fixed": "#ffdcc2",
+                    "inverse-primary": "#bccca7",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#131f07",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c5c8bc",
+                    "primary-fixed-dim": "#bccca7",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fbfff2",
+                    "surface-container-low": "#fbf3e4",
+                    "secondary-fixed-dim": "#fbb981",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#3d4b2f",
+                    "on-tertiary-fixed-variant": "#3b4b33",
+                    "surface-dim": "#e0d9cb",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d8e8c2",
+                    "on-secondary-fixed-variant": "#693c0f",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1e1b13",
+                    "tertiary-fixed-dim": "#b9ccad",
+                    "surface-variant": "#e9e2d3",
+                    "inverse-on-surface": "#f8f0e1",
+                    "on-tertiary-fixed": "#111f0b",
+                    "inverse-surface": "#343027",
+                    "background": "#fff8ef",
+                    "tertiary-container": "#697a5f",
+                    "primary-container": "#6b7a5a",
+                    "surface-container-high": "#efe7d9",
+                    "on-error-container": "#93000a",
+                    "secondary": "#855324",
+                    "surface-tint": "#546345",
+                    "on-surface-variant": "#45483f",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#2e1500",
+                    "secondary-container": "#febb84",
+                    "tertiary": "#506148",
+                    "on-primary-container": "#fcfff1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "caption": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card:hover .add-to-cart-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .transition-stagger > * {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Falling Leaves Transition Layer -->
+<div class="fixed inset-0 pointer-events-none z-50">
+<animated-svg class="w-full h-full" src="{{DATA:ANIMATION:ANIMATION_1}}"></animated-svg>
+</div>
+<!-- Shared Header -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-neutral-50 group/design-root overflow-x-hidden" style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 lg:px-40 flex flex-1 justify-center py-5 bg-surface">
+<div class="layout-content-container flex flex-col max-w-[1280px] flex-1">
+<!-- Top Navigation Bar (Shared) -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-outline-variant px-4 lg:px-10 py-3 bg-surface">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-on-surface text-lg font-bold leading-tight tracking-[-0.015em] font-headline-lg">Prakriti</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-on-surface-variant text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-on-surface-variant text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About</a>
+<a class="text-on-surface-variant text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Sustainability</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-outline flex border-none bg-surface-container items-center justify-center pl-4 rounded-l-lg" data-icon="MagnifyingGlass">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-on-surface focus:outline-0 focus:ring-0 border-none bg-surface-container h-full placeholder:text-outline px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-surface-container text-on-surface hover:bg-surface-container-high transition-all">
+<div data-icon="ShoppingCart">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-surface-container text-on-surface hover:bg-surface-container-high transition-all">
+<div data-icon="User">
+<span class="material-symbols-outlined">person</span>
+</div>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Search (Shared) -->
+<div class="px-4 py-3 md:hidden">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-outline flex border-none bg-surface-container items-center justify-center pl-4 rounded-l-lg" data-icon="MagnifyingGlass">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-on-surface focus:outline-0 focus:ring-0 border-none bg-surface-container h-full placeholder:text-outline px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search organic skincare..." value=""/>
+</div>
+</label>
+</div>
+<!-- Filter / Sort Bar (Shared Logic Applied) -->
+<div class="flex gap-3 p-4 lg:p-6 overflow-x-auto no-scrollbar">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-outline-variant bg-surface px-4 hover:bg-surface-container transition-all">
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Skin Type</p>
+<div data-icon="CaretDown">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-outline-variant bg-surface px-4 hover:bg-surface-container transition-all">
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Price Range</p>
+<div data-icon="CaretDown">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-outline-variant bg-surface px-4 hover:bg-surface-container transition-all">
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Category</p>
+<div data-icon="CaretDown">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-outline-variant bg-surface px-4 hover:bg-surface-container transition-all ml-auto">
+<p class="text-on-surface-variant text-sm font-medium leading-normal">Sort By: Popular</p>
+<div data-icon="ArrowsDownUp">
+<span class="material-symbols-outlined text-sm">swap_vert</span>
+</div>
+</button>
+</div>
+<!-- Header Content -->
+<div class="flex flex-wrap justify-between items-end gap-3 p-4 lg:p-6 mb-4">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-on-surface text-4xl lg:text-5xl font-black leading-tight tracking-tight font-headline-lg">Our Collection</p>
+<p class="text-on-surface-variant text-lg font-normal leading-normal max-w-lg">Ethically sourced, cold-pressed, and formulated with ancient Ayurvedic wisdom for modern skin needs.</p>
+</div>
+<div class="text-on-surface-variant text-sm font-medium border-b border-outline-variant pb-1">
+                            Showing 24 Products
+                        </div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-4 lg:p-6 transition-stagger">
+<!-- Product Item 1 -->
+<div class="group product-card flex flex-col gap-4 relative">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist studio photograph of a sleek glass bottle containing golden Vitamin C serum. The bottle is placed on a smooth, organic-shaped light wood pedestal against a soft, creamy beige background with gentle, diffuse natural lighting. The overall aesthetic is clean, high-end, and emphasizes the purity of the natural ingredients." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpX3RXb1ckSmTwIOQjUSla1CLm1zI0U6PUlwavep92gD0CaXYwjjyc-jQ0RzyV76T2MEmrz6atjqE_KSnaxDEpcQrZEqS67gvL5ykxVq_bC-3eoSYi7bygdOnwma5leKXfrP6q4NA1jw5t-AMJpBiJaaZXMx4jXxjKWlviQ56QclogSMJ6wxVKIQFBxOMRTKhhTEEBuJiTm1XMA5zMkFucwBFNm05ME0bZf3hX_QocIAQL-n2qG59YwQ");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                    Bestseller
+                                </div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight font-body-lg">Vitamin C Glow Serum</h3>
+<p class="text-secondary font-bold">₹899</p>
+</div>
+<p class="text-outline text-sm font-normal">Brightening &amp; Antioxidant</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.9 (124 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.1s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up shot of a rustic, textured lavender organic soap bar resting on a bed of dried lavender sprigs. The lighting is warm and directional, highlighting the natural imperfections and botanical particles within the soap. A soft green leaf peaks from the side. The scene is set in a light-filled bathroom with marble textures, creating a calming, spa-like mood." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJ66ezKzP4NkpU9kGmzGNID50gjRS6DH7S8xNi7WebF22KVmJUCIQpAjObSSoF2cokPxcLzKGz6qPIaFICr6m7cezz4AJhm-ymK7eFhhuSl8Ez2mpOO3HpTom5Ka4ORjcfGTN6KChGmTvyL6w12_peKoH2IHdmMXjk8qNQCR93r1u6P8sSe0ETYjYmLD4wkI-8Fxr7q1l61th_GL8Cj_oR8rluwy43J0blfL4_XnT0V8Inf5gOaLC7HA");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Lavender &amp; Oat Soap</h3>
+<p class="text-secondary font-bold">₹250</p>
+</div>
+<p class="text-outline text-sm font-normal">Handmade &amp; Soothing</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.8 (89 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.2s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant presentation of a dark amber glass bottle with a wooden dropper cap, containing cold-pressed herbal oil. The bottle is surrounded by fresh neem leaves and small pieces of sandalwood. The backdrop is a textured clay wall with long, soft shadows cast by early morning sunlight, creating a tranquil and grounded atmosphere." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPShGVY1ivH5fm0Ngog_WBd6gHhMexyHqUpXaZep4G080DutPU4Md4ja7fAusqzsp861YqM0ZVMNPQAp3iByLBPXF1wyEvVd2GwQgyawDYHEggSyMg3YqhLtTEj9JdTuu14oIukShmF7ueGiY5LeBwJQxOoRgrbj_lbTAMd9lCBZ6bUv5gByU7ZdH5hmjHdraEqzb1MA2ZEjf4DBnswXgY9XRFIlY2VgbrF5j3LQ6kCSj88NQTVQAvUw");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+<div class="absolute top-3 left-3 bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                    New
+                                </div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Cold-Pressed Neem Oil</h3>
+<p class="text-secondary font-bold">₹450</p>
+</div>
+<p class="text-outline text-sm font-normal">Purifying &amp; Balancing</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.7 (56 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 4 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.3s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="A refreshing visual of a frosted glass spray bottle containing Rose Water Mist. Droplets of water cling to the bottle's surface. In the background, soft-focus pink rose petals are scattered across a white linen surface. High-key lighting creates a bright, airy, and feminine aesthetic, emphasizing freshness and hydration." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCS3VgCCAnl_RysDN4qPOjHSWljaQrt735F54ColCCvLjlmm9Esg_U4rWyESxYetuEtnGjjFNXfUCrNtEuWleKALv4QRTKg4uNf8OPLkPPrlHIP4GOeBio1bYe7NxKZ-C3PzT4kM_7CFL5Y_M7oOBIQxrNtttjBze5IY4_m3MXwabS0VIpjhkoLqQiJZxtfU63c7Pu_KAz3wBgWcBvRH4KFWf_fKIt22eRhheYtJc1u4Z-3jczlQRECAA");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Pure Rose Water Mist</h3>
+<p class="text-secondary font-bold">₹350</p>
+</div>
+<p class="text-outline text-sm font-normal">Refreshing &amp; Toning</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">5.0 (210 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 5 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.4s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="A clean, minimalist tub of white hydrating face cream resting on a slab of light green jade. Beside it lies a small wooden spatula. The background is a soft-focus garden scene with hints of lush greenery. The lighting is soft and natural, emphasizing the creamy texture of the product and its botanical origins." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBou-FsSlxC6bUVW70IBM2zpQuoVqBnXjbeGiw32Q7RyqlxM1WQfrcIjbj1_kb4i2Lan8_aU8K3auvEmMPFl9Z7dxe2ZN9UzlO2s_PIgd-pYBbgB7OMqCJbuOE5Yy9t8yBIG_OICoPYW3yg8jI6bkL-ZZqgydUKbNFiIneO3qTQIIFJqyxiJYOAXInq_kvf36FapuoGoeBtJyipi62KAQXtMoN65bIaRoEr2PtE_paOei7_Dz2cPwZhAA");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Hydrating Day Cream</h3>
+<p class="text-secondary font-bold">₹650</p>
+</div>
+<p class="text-outline text-sm font-normal">Deep Moisture for Dry Skin</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.9 (45 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 6 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.5s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-angle flat lay photograph of a minimalist tube of Neem Cleanser surrounded by fresh neem leaves, whole turmeric roots, and a small bowl of white clay. The arrangement is artistic and balanced on a light, neutral-toned linen fabric. Bright, even lighting highlights the organic components of the formula." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEaT9fRbL6bNXVkBVwo7rrrP7NvJ18bSKzJhjcnxqSeyuBT4_6VfQ-kvO5vLAUQoX5z0A2_QRCW0XyTye2tx-Ip44XLF4X1aa4zLPqzLwCHwNAySlWPGaSAIrj2q5hE-km4r4oq-IketsPC0wL_2olz3IX2Ishy_VdzjeVnXNWGAw3EUohOjiu5t8dqmrQArGW9BGx7y050iSp884BnOHyc56gr2h_ixe3ycAphtvIE4P1Vl7ZEFJn-A");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Anti-Acne Neem Cleanser</h3>
+<p class="text-secondary font-bold">₹199</p>
+</div>
+<p class="text-outline text-sm font-normal">Purifying &amp; Anti-bacterial</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.6 (180 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 7 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.6s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious glass bottle of Kumkumadi Tailum face oil standing on a stack of smooth river stones. Beside it, delicate saffron strands are scattered. The background is a deep, earthy green. Soft golden hour light filters through unseen foliage, creating a warm, magical glow that highlights the oil's rich texture." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_6QK-7GA0CR_1wkj3QNx6V7HO9iYLlF1lqW26Y6z57OZ_wBB5vtvsrMDwZR4s8D9yqVRPXET8IN32m1q1DQWhZDKOUrmrJt3aTZcreH2AoF_g65yL65X4kogtB-KRcIHQy6BPwlQtpSSd1qObJfmeoS22TmBKv2MhdrUXLgkH-9QLbzo2kkVZetjdzRaCfP0vuZVVHV9-hfmSJqo2RYjrMTvdhN6ZJal3akdnI7H86ZwbpmuwMaO0Ig");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Kumkumadi Tailam</h3>
+<p class="text-secondary font-bold">₹1,250</p>
+</div>
+<p class="text-outline text-sm font-normal">Ayurvedic Night Repair Oil</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.9 (320 reviews)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 8 -->
+<div class="group product-card flex flex-col gap-4 relative" style="animation-delay: 0.7s;">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="A modern glass pump bottle of Aloe Vera Soothing Gel. The bottle is partially submerged in crystal clear water, with ripples and light reflections dancing on its surface. The background is a clean white, creating a sense of pure hydration and coolness. Minimalist and refreshing visual style." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_IOqEulNEwS0WDINhWjEnJ_aOlFvS6HMBGvjc1p4gWj7W0NbF3SQAWZGdngO_L64eEkQmDg7PDTF8ukQLxDLJwvL0p2OSJHMTvkOUWkpiWQ01W9tejZMKDGZi15JBIIOtz7RwVBLdTY96lvTVc-e7IdrCEL7Zn68UyGevNlAakbaCMviGuAJuuvJ_Jz6NbTfp7qC_cR3J-SdXp_uH2bxv-vGaPXVQVCkRH3yHPt1qhCnU-jb5Q5yfTg");'>
+</div>
+<div class="add-to-cart-overlay absolute bottom-0 left-0 right-0 p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-out bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-lg">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-on-surface text-lg font-semibold leading-tight">Pure Aloe Vera Gel</h3>
+<p class="text-secondary font-bold">₹299</p>
+</div>
+<p class="text-outline text-sm font-normal">Cooling &amp; Healing Mist</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-medium text-on-surface-variant">4.8 (155 reviews)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-4 py-12">
+<button class="flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="h-10 w-10 rounded-full bg-primary text-on-primary font-bold">1</button>
+<button class="h-10 w-10 rounded-full hover:bg-surface-container transition-colors text-on-surface-variant font-medium">2</button>
+<button class="h-10 w-10 rounded-full hover:bg-surface-container transition-colors text-on-surface-variant font-medium">3</button>
+<span class="h-10 w-10 flex items-center justify-center text-outline">...</span>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Footer Callout -->
+<footer class="bg-surface-container rounded-3xl p-8 lg:p-12 mb-12 flex flex-col lg:flex-row items-center gap-8 text-center lg:text-left">
+<div class="flex-1 space-y-4">
+<h2 class="text-3xl lg:text-4xl font-bold font-headline-lg text-on-surface">Not sure what your skin needs?</h2>
+<p class="text-on-surface-variant text-lg">Take our 2-minute Ayurvedic skin quiz to find your Dosha and get personalized product recommendations.</p>
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold hover:shadow-lg transition-all transform hover:-translate-y-1">
+                                Take the Quiz
+                            </button>
+</div>
+<div class="w-full lg:w-1/3 aspect-video rounded-2xl bg-surface-container-highest overflow-hidden relative shadow-xl">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="A peaceful and balanced scene showing a wooden tray with various natural ingredients like turmeric, sandalwood, and fresh herbs next to a glowing candle. The lighting is warm and invites introspection. The composition is clean and minimalist, reflecting a holistic lifestyle approach. High-quality lifestyle photography with a soft, natural color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBg0Be0so59nmRwSf0utDABZk9Y9EWoNnXcGqPBaAY4E6r6XOmt7ubaGuVhZpK2IdoqS9Pp1LqKYrpvPM_MyZz8l3jyghr0_5GEgYBR0rUZ17R3_WSOtwRnfpoWVjkTL6tEjjtOl24oEBRfhlxngQmk8ck7ecRSgJV7BO0Mia61u3AtCcWxwkAvYE2NG2iCUwMzam1MPBueAtYigWPPL2lmPggilEDP6s0DSjkA9huh16YyfuiTjA6jJQ')">
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interactions for product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential hover logic if JS needed beyond CSS
+            });
+        });
+
+        // Simple Fade-in Observer for grid items
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.transition-stagger > div').forEach(item => {
+            item.style.animationPlayState = 'paused';
+            observer.observe(item);
+        });
+    </script>
+</body></html>

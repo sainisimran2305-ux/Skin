@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prakriti Skin Quiz - Lifestyle &amp; Environment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#131f07",
+                        "inverse-primary": "#bccca7",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e9e2d3",
+                        "surface": "#fff8ef",
+                        "surface-variant": "#e9e2d3",
+                        "inverse-surface": "#343027",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#fbb981",
+                        "tertiary-fixed": "#d5e8c8",
+                        "surface-bright": "#fff8ef",
+                        "outline-variant": "#c5c8bc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf3e4",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fff8ef",
+                        "tertiary": "#506148",
+                        "on-surface-variant": "#45483f",
+                        "surface-tint": "#546345",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fbfff2",
+                        "on-primary-container": "#fcfff1",
+                        "secondary": "#855324",
+                        "surface-dim": "#e0d9cb",
+                        "on-tertiary-fixed": "#111f0b",
+                        "on-background": "#1e1b13",
+                        "primary-fixed": "#d8e8c2",
+                        "outline": "#75786e",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3b4b33",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-secondary-fixed": "#2e1500",
+                        "surface-container-high": "#efe7d9",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3d4b2f",
+                        "secondary-container": "#febb84",
+                        "primary-fixed-dim": "#bccca7",
+                        "on-secondary-fixed-variant": "#693c0f",
+                        "primary": "#536143",
+                        "surface-container": "#f5edde",
+                        "on-surface": "#1e1b13",
+                        "primary-container": "#6b7a5a",
+                        "tertiary-fixed-dim": "#b9ccad",
+                        "inverse-on-surface": "#f8f0e1",
+                        "tertiary-container": "#697a5f",
+                        "on-secondary-container": "#79491b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "display-md": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .quiz-card {
+            transition: all 0.3s ease;
+        }
+        .quiz-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(58, 74, 50, 0.15);
+        }
+        .quiz-card.selected {
+            border-color: #febb84; /* secondary-container (soft terracotta) */
+            background-color: rgba(254, 187, 132, 0.05);
+        }
+        .quiz-card.selected .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Navigation (Suppressed for Transactional Quiz Flow, but keeping Brand Anchor) -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md px-margin-desktop py-4 flex justify-center items-center">
+<a class="font-display-md text-display-md text-primary" href="#">Prakriti</a>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center pt-[100px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="w-full max-w-2xl mb-12">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-md text-label-md text-outline uppercase">Step 3 of 3</span>
+<span class="font-label-md text-label-md text-primary uppercase">Lifestyle &amp; Environment</span>
+</div>
+<div class="h-1 bg-surface-variant w-full overflow-hidden">
+<div class="h-full bg-primary w-full transition-all duration-500 ease-in-out"></div>
+</div>
+</div>
+<!-- Quiz Content -->
+<div class="text-center mb-12 max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Your Daily Ritual</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your environment plays a vital role in your skin's health. Select all factors that apply to your current lifestyle to help us craft your perfect botanical regimen.</p>
+</div>
+<!-- Bento Grid for Selection Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit w-full max-w-4xl mb-16">
+<!-- Card 1: City Living -->
+<button class="quiz-card group relative text-left bg-surface-container-highest border border-transparent overflow-hidden h-[240px] flex flex-col justify-end p-6 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute inset-0 bg-black/20 z-10 transition-opacity group-hover:bg-black/10"></div>
+<div class="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated close-up photograph of urban architectural textures mixed with subtle botanical elements. High-end editorial style, shallow depth of field, warm natural lighting reflecting off glass and concrete. The aesthetic is modern organic minimalism, blending the harshness of city living with the softness of nature. Color palette features deep greens, concrete greys, and soft cream highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJoZhtmYJlXyHlw3QX-yVnGsDw_Z3jOdOxxWTKzIcFPJpmMUsCwubEf8E_dSGrvXHkWZ76DFJ_IrVg_U5qiyvR5LVM2RQr8uZ-9vExDmNaOMIh0w4iiV7EwCkhQ6isL7ujIKsfilclgDWB7bDhy976pQ6xCch7x4ChIM9RhMU577DtvqtlHqvfwmYCqStLw8q-N18cBA8iPz25KWOCumfsJLoiFw41HvKzcmjO8Y_M4VFtt1fALEogSg')"></div>
+<div class="relative z-20 flex justify-between items-end w-full">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">City Living</h3>
+<p class="font-body-md text-body-md text-on-primary/80">High exposure to pollution &amp; free radicals</p>
+</div>
+<div class="check-icon opacity-0 transform scale-50 transition-all duration-300 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</button>
+<!-- Card 2: Sun Exposure -->
+<button class="quiz-card group relative text-left bg-surface-container-highest border border-transparent overflow-hidden h-[240px] flex flex-col justify-end p-6 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute inset-0 bg-black/20 z-10 transition-opacity group-hover:bg-black/10"></div>
+<div class="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-105" data-alt="A premium macro photograph of a single green botanical leaf casting sharp, geometric shadows under bright, direct sunlight. The lighting is intense yet beautiful, highlighting the intricate veins of the leaf. The background is a soft, textured cream surface. The mood is warm, vibrant, and sun-drenched, emphasizing the concept of natural sun exposure in a high-end skincare context." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbBx4tdubMlw1DHY5QBOaAOsiyqkVqy23gDjR58o7MazqBBili1yLeJvWpHSYBJLO3hxCGEvr9h4pgBYsKK6LOc2WJDSI1uCxqaQph0e01CCWW3E_HhFi3gLxde1DFCZXjKhqMLl0zJzbNmiKpasp60dzwvcSOyu63xl3RP-8NtvzwDSjVM70TABBotmzpHk10iFf633ARkh7GSeIDooegcw0lPJtYbsTQ4DxvuA0AEQQNOB4BbhLnlA')"></div>
+<div class="relative z-20 flex justify-between items-end w-full">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">Sun Exposure</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Frequent outdoor activities</p>
+</div>
+<div class="check-icon opacity-0 transform scale-50 transition-all duration-300 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</button>
+<!-- Card 3: High Stress -->
+<button class="quiz-card group relative text-left bg-surface-container-highest border border-transparent overflow-hidden h-[240px] flex flex-col justify-end p-6 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute inset-0 bg-black/20 z-10 transition-opacity group-hover:bg-black/10"></div>
+<div class="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-105" data-alt="An abstract, moody macro shot of rippling water or dark, textured stone, representing tension. The lighting is low-key with subtle, cool-toned highlights contrasting against deep, rich dark tones. The aesthetic is serene yet complex, evoking the internal feeling of high stress while maintaining a premium, minimalist editorial vibe. Soft focus areas blur into the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLVSflS5uz_zKb05ajhgJMuhHjZNoVIo-q73yTbJLmh8S_SPoMLI6fBSD9CBhIZEj9vNsopjyg2Wx3vCl6q5lCBbDNU2subXnEin__Yofki5AUaOAtRsZTckuIRVhbcqpG1MlEjzqADqwj6U8TvlnkQJIYncSPu-n8PkaKXGXt16-bO88AIY2Cd2_SwYY0wkMP19_TECmmEVbFG8hCJVzLi_r3M3CorOaevoBhEces8dJ0aHVq6jobiQ')"></div>
+<div class="relative z-20 flex justify-between items-end w-full">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">High Stress</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Demanding schedule &amp; environmental stressors</p>
+</div>
+<div class="check-icon opacity-0 transform scale-50 transition-all duration-300 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</button>
+<!-- Card 4: Minimal Sleep -->
+<button class="quiz-card group relative text-left bg-surface-container-highest border border-transparent overflow-hidden h-[240px] flex flex-col justify-end p-6 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute inset-0 bg-black/20 z-10 transition-opacity group-hover:bg-black/10"></div>
+<div class="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-105" data-alt="A soft, ethereal photograph of delicate white botanical flowers or cotton against a muted, dark taupe background, suggesting nighttime and rest. The lighting is dim, resembling moonlight, casting very soft shadows. The overall mood is quiet, deeply calming, and minimalist, fitting a premium skincare brand's interpretation of minimal sleep and the need for recovery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUzJjL6rPDYdxdNN8unZJuGZK1lSlF_BITMFzvfqtzy_N1S75ykcwxlMWFDstqW9IYtxDNpZnPbHP91ikf6iCfwQLg386_niA2jXVRZm84lT8BFyvcuEdwnK4QYxr6JWn56sMkVeIsEz6qBSlURa2xAknPiUS6r4fwktFK2ywSgD6L_afvdQjj_KNTFUsoWZkhDnym1bJ1Q9gu8GNgFF7etNuqmi3BAYiPQyRUCejXAGkzMs2_uMLWzg')"></div>
+<div class="relative z-20 flex justify-between items-end w-full">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">Minimal Sleep</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Less than 6 hours average rest</p>
+</div>
+<div class="check-icon opacity-0 transform scale-50 transition-all duration-300 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</button>
+</div>
+<!-- Navigation Actions -->
+<div class="flex flex-col sm:flex-row justify-between items-center w-full max-w-2xl mt-8 gap-4">
+<button class="font-label-md text-label-md text-primary uppercase border border-primary px-12 py-4 hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto">
+                Back
+            </button>
+<button class="font-label-md text-label-md text-on-primary uppercase bg-primary px-12 py-4 hover:bg-primary/90 transition-colors duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
+                See My Results
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<script>
+        function toggleSelection(element) {
+            // In a real app, this would handle state, but for UI demonstration we toggle the class
+            element.classList.toggle('selected');
+            
+            // Subtle visual feedback
+            const isSelected = element.classList.contains('selected');
+            if (isSelected) {
+                element.style.borderColor = '#febb84'; // secondary-container
+            } else {
+                element.style.borderColor = 'transparent';
+            }
+        }
+    </script>
+</body></html>
