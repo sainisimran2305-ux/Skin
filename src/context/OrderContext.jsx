@@ -28,6 +28,8 @@ const DEFAULT_ORDERS = [
   }
 ];
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export const OrderProvider = ({ children }) => {
   const [orders, setOrders] = useState(() => {
     const saved = localStorage.getItem('prakriti_orders');
@@ -38,7 +40,7 @@ export const OrderProvider = ({ children }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/orders/');
+        const res = await fetch(`${API_BASE_URL}/api/orders/`);
         if (res.ok) {
           const dbOrders = await res.json();
           // Sort descending by date or keep database order (assuming database returns in order)
@@ -71,7 +73,7 @@ export const OrderProvider = ({ children }) => {
 
     try {
       // Try to save to MongoDB backend
-      const res = await fetch('http://localhost:8000/api/orders/', {
+      const res = await fetch(`${API_BASE_URL}/api/orders/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(tempOrder)

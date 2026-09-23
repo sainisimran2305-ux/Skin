@@ -4,6 +4,8 @@ import { INGREDIENTS as STATIC_INGREDIENTS } from '../data/ingredients';
 
 const ProductContext = createContext();
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(STATIC_PRODUCTS);
   const [ingredients, setIngredients] = useState(STATIC_INGREDIENTS);
@@ -14,13 +16,15 @@ export const ProductProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        // Try fetching products from local API
-        const productsRes = await fetch('http://localhost:8000/api/products/');
+        // Try fetching products from API
+        const productsRes = await fetch(`${API_BASE_URL}/api/products/`);
         if (!productsRes.ok) throw new Error('Failed to fetch products');
         const dbProducts = await productsRes.json();
         
         // Try fetching ingredients
-        const ingredientsRes = await fetch('http://localhost:8000/api/ingredients/');
+        const ingredientsRes = await fetch(`${API_BASE_URL}/api/ingredients/`);
+        if (!ingredientsRes.ok) throw new Error('Failed to fetch ingredients');
+        const dbIngredients = await ingredientsRes.json();
         if (!ingredientsRes.ok) throw new Error('Failed to fetch ingredients');
         const dbIngredients = await ingredientsRes.json();
         
