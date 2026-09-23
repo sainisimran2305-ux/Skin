@@ -25,8 +25,6 @@ export const ProductProvider = ({ children }) => {
         const ingredientsRes = await fetch(`${API_BASE_URL}/api/ingredients/`);
         if (!ingredientsRes.ok) throw new Error('Failed to fetch ingredients');
         const dbIngredients = await ingredientsRes.json();
-        if (!ingredientsRes.ok) throw new Error('Failed to fetch ingredients');
-        const dbIngredients = await ingredientsRes.json();
         
         setProducts(dbProducts);
         setIngredients(dbIngredients);
