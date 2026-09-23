@@ -1,0 +1,19 @@
+services:
+  # Backend FastAPI Service
+  - type: web
+    name: prakriti-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: DB_NAME
+        value: prakriti_skincare
+
+  # Frontend React Service
+  - type: static
+    name: prakriti-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
