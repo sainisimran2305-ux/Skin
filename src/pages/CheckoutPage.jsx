@@ -3,20 +3,22 @@ import { useNavigate, Link } from 'react-router-dom';
 import { ShieldCheck, Lock, Truck, CreditCard, Banknote, CheckCircle2, ArrowLeft, Info } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useOrder } from '../context/OrderContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function CheckoutPage() {
   const { cartItems, total, subtotal, discountAmount, shippingCost, clearCart } = useCart();
   const { placeOrder } = useOrder();
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const [paymentMethod, setPaymentMethod] = useState('cod'); // 'cod' or 'card'
   const [formData, setFormData] = useState({
-    email: 'aria.sharma@example.in',
-    fullName: 'Aria Sharma',
-    address: '742 Botanical Avenue, Suite 4B',
-    city: 'Mumbai',
-    state: 'Maharashtra',
-    zip: '400001',
+    email: user?.email || '',
+    fullName: user?.name || '',
+    address: '42 Gardenia Heights',
+    city: 'New Delhi',
+    state: 'Delhi',
+    zip: '110001',
     cardNumber: '•••• •••• •••• 4242',
     cardExp: '12/28',
     cardCvc: '888'
@@ -29,28 +31,38 @@ export default function CheckoutPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      const createdOrder = placeOrder({
+    try {
+      const orderPayload = {
+        customerEmail: user?.email || formData.email || 'customer@prakriti.com',
+        customerName: formData.fullName || user?.name || 'Valued Customer',
         items: cartItems,
         total: total,
         paymentMethod: paymentMethod,
-        paymentMethodLabel: paymentMethod === 'cod' ? 'Cash on Delivery (COD)' : 'Online Card / UPI',
+        paymentMethodLabel: paymentMethod === 'cod' ? 'Cash on Delivery (COD)' : 'Prepaid Online (Card / UPI)',
         shippingAddress: {
           fullName: formData.fullName,
+          email: formData.email,
           address: formData.address,
           city: formData.city,
           state: formData.state,
           zip: formData.zip
         }
-      });
+      };
+
+      const createdOrder = await placeOrder(orderPayload);
       clearCart();
       setIsSubmitting(false);
-      setCompletedOrder(createdOrder);
-    }, 1200);
+
+      // Navigate to dedicated Order Confirmation Page
+      navigate(`/order-confirmation/${createdOrder.id}`, { state: { order: createdOrder } });
+    } catch (err) {
+      console.error('Failed to submit order:', err);
+      setIsSubmitting(false);
+    }
   };
 
   if (completedOrder) {

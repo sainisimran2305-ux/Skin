@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Search, Leaf, Sparkles, BookOpen, ShieldCheck } from 'lucide-react';
+import { Search, Leaf, Sparkles, BookOpen, ShieldCheck, MapPin } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
+import { INGREDIENTS as STATIC_INGREDIENTS } from '../data/ingredients';
 
 export default function IngredientsGuidePage() {
   const { ingredients } = useProducts();
+  const sourceIngredients = STATIC_INGREDIENTS && STATIC_INGREDIENTS.length > 0 ? STATIC_INGREDIENTS : ingredients;
   const [search, setSearch] = useState('');
   const [filterBenefit, setFilterBenefit] = useState('all');
 
-  const filtered = ingredients.filter(item => {
+  const filtered = sourceIngredients.filter(item => {
     const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase()) ||
                           item.description.toLowerCase().includes(search.toLowerCase()) ||
-                          item.latinName.toLowerCase().includes(search.toLowerCase());
+                          item.latinName.toLowerCase().includes(search.toLowerCase()) ||
+                          (item.skinTypeSuitability && item.skinTypeSuitability.toLowerCase().includes(search.toLowerCase()));
     const matchesBenefit = filterBenefit === 'all' || item.benefits.some(b => b.toLowerCase().includes(filterBenefit.toLowerCase()));
     return matchesSearch && matchesBenefit;
   });
@@ -51,11 +54,12 @@ export default function IngredientsGuidePage() {
             onChange={(e) => setFilterBenefit(e.target.value)}
             className="bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-2 text-xs text-on-surface focus:outline-none focus:border-primary font-medium w-full sm:w-auto"
           >
-            <option value="all">All Plant Benefits</option>
+            <option value="all">All Plant Benefits ({sourceIngredients.length})</option>
             <option value="antiseptic">Antiseptic & Clarifying</option>
             <option value="brighten">Brightening & Radiance</option>
             <option value="hydration">Deep Hydration & Soothing</option>
-            <option value="inflammation">Anti-inflammatory</option>
+            <option value="inflammation">Anti-inflammatory & Redness</option>
+            <option value="barrier">Barrier Restoration</option>
           </select>
         </div>
       </div>
@@ -65,15 +69,20 @@ export default function IngredientsGuidePage() {
         {filtered.map((ingredient) => (
           <div
             key={ingredient.id}
-            className="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/30 p-6 space-y-4 flex flex-col justify-between transition-lift"
+            className="group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/30 p-6 space-y-4 flex flex-col justify-between transition-lift"
           >
             <div className="space-y-4">
-              <div className="aspect-[16/10] rounded-xl overflow-hidden bg-surface-container">
+              <div className="aspect-[16/10] rounded-xl overflow-hidden bg-surface-container relative">
                 <img
                   src={ingredient.image}
                   alt={ingredient.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                {ingredient.skinTypeSuitability && (
+                  <span className="absolute bottom-2.5 left-2.5 bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm border border-outline-variant/30">
+                    {ingredient.skinTypeSuitability}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -102,7 +111,10 @@ export default function IngredientsGuidePage() {
             </div>
 
             <div className="pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs text-outline font-medium">
-              <span>Origin: {ingredient.originRegion}</span>
+              <span className="flex items-center gap-1">
+                <MapPin size={12} className="text-secondary" />
+                <span>{ingredient.originRegion}</span>
+              </span>
               <span className="text-primary font-bold">100% Pure</span>
             </div>
           </div>

@@ -28,6 +28,27 @@ class ProductBase(BaseModel):
 class ProductCreate(ProductBase):
     pass
 
+class ProductUpdate(BaseModel):
+    name: Optional[str] = None
+    subtitle: Optional[str] = None
+    category: Optional[str] = None
+    categoryLabel: Optional[str] = None
+    price: Optional[float] = None
+    originalPrice: Optional[float] = None
+    rating: Optional[float] = None
+    reviewsCount: Optional[int] = None
+    badge: Optional[str] = None
+    skinType: Optional[List[str]] = None
+    volumeOptions: Optional[List[str]] = None
+    selectedVolume: Optional[str] = None
+    image: Optional[str] = None
+    secondaryImage: Optional[str] = None
+    description: Optional[str] = None
+    keyIngredients: Optional[List[str]] = None
+    benefits: Optional[List[str]] = None
+    usage: Optional[str] = None
+    ritualTime: Optional[str] = None
+
 class ProductResponse(ProductBase):
     pass
 
@@ -85,6 +106,15 @@ class OrderBase(BaseModel):
 
 class OrderCreate(OrderBase):
     pass
+
+class OrderUpdate(BaseModel):
+    status: Optional[str] = None
+    currentStep: Optional[int] = None
+    trackingNumber: Optional[str] = None
+    carrier: Optional[str] = None
+    estimatedDelivery: Optional[str] = None
+    paymentMethod: Optional[str] = None
+    paymentMethodLabel: Optional[str] = None
 
 class OrderResponse(OrderBase):
     pass

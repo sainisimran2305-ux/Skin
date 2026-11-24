@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Heart, Search, Sparkles, User, MapPin, BookOpen, Clock, Menu, X } from 'lucide-react';
+import { ShoppingBag, Heart, Search, Sparkles, User, MapPin, BookOpen, Clock, Menu, X, ShieldCheck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function Header({ onOpenSearch }) {
   const { totalItemCount, setIsCartOpen } = useCart();
   const { wishlistIds } = useWishlist();
+  const { isOwner, user, logout } = useAuth();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,6 +25,33 @@ export default function Header({ onOpenSearch }) {
 
   return (
     <header className="sticky top-0 z-40 w-full transition-all duration-300">
+      {/* Admin Session Top Bar - ONLY visible to verified Store Administrator */}
+      {isOwner && (
+        <div className="bg-secondary text-on-secondary text-xs py-1.5 px-4 sm:px-8 flex items-center justify-between border-b border-secondary-container/40">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-semibold text-[11px] uppercase tracking-wider">
+              Store Administrator: {user?.name || 'Simran Saini'} ({user?.email || 'sainisimran2304@gmail.com'})
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/admin"
+              className="text-xs font-bold hover:underline flex items-center gap-1 bg-black/20 px-2.5 py-0.5 rounded-full"
+            >
+              <ShieldCheck size={14} />
+              <span>Admin Management Portal</span>
+            </Link>
+            <button
+              onClick={logout}
+              className="text-[11px] opacity-80 hover:opacity-100 hover:underline"
+            >
+              Sign Out
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Announcement Bar */}
       <div className="bg-primary text-on-primary text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
         <span>✨ Complimentary wild-harvested botanical mini with orders over ₹1,499</span>
@@ -100,14 +129,24 @@ export default function Header({ onOpenSearch }) {
               )}
             </Link>
 
-            {/* Account / Track Order Button */}
-            <Link
-              to="/orders"
-              className="p-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-full transition hidden sm:flex"
-              title="My Orders & Tracking"
-            >
-              <User size={20} />
-            </Link>
+            {/* Account / Track Order Button with User Name */}
+            <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-outline-variant/40">
+              <Link
+                to="/orders"
+                className="flex items-center gap-1.5 text-xs font-semibold text-on-surface hover:text-primary transition"
+                title="Customer Account & Orders"
+              >
+                <User size={16} className="text-secondary" />
+                <span className="line-clamp-1 max-w-[90px]">{user?.name?.split(' ')[0] || 'Account'}</span>
+              </Link>
+              <button
+                onClick={logout}
+                className="text-[11px] text-outline hover:text-error transition font-medium"
+                title="Sign out of account"
+              >
+                (Logout)
+              </button>
+            </div>
 
             {/* Cart Drawer Trigger */}
             <button
@@ -146,21 +185,41 @@ export default function Header({ onOpenSearch }) {
               </Link>
             );
           })}
-          <div className="pt-4 border-t border-outline-variant/40 flex items-center justify-between">
-            <Link
-              to="/orders"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-primary flex items-center gap-2"
-            >
-              <User size={16} /> My Account & Track Order
-            </Link>
-            <Link
-              to="/reviews"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-secondary"
-            >
-              Customer Reviews ⭐
-            </Link>
+          <div className="pt-4 border-t border-outline-variant/40 space-y-3">
+            <div className="flex items-center justify-between">
+              <Link
+                to="/orders"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-semibold text-primary flex items-center gap-2"
+              >
+                <User size={16} /> Hi, {user?.name || 'Customer'}
+              </Link>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  logout();
+                }}
+                className="text-xs text-error font-semibold hover:underline"
+              >
+                Sign Out
+              </button>
+            </div>
+            <div className="flex items-center justify-between text-xs text-on-surface-variant">
+              <Link
+                to="/orders"
+                onClick={() => setMobileMenuOpen(false)}
+                className="hover:text-primary"
+              >
+                Track Live Orders
+              </Link>
+              <Link
+                to="/reviews"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-secondary font-medium"
+              >
+                Customer Reviews ⭐
+              </Link>
+            </div>
           </div>
         </div>
       )}

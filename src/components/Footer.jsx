@@ -144,7 +144,7 @@ export default function Footer() {
         <div className="flex gap-6">
           <a href="#" className="hover:text-primary transition">Privacy Policy</a>
           <a href="#" className="hover:text-primary transition">Terms of Service</a>
-          <a href="#" className="hover:text-primary transition">Sustainability Report</a>
+          <Link to="/admin/login" className="opacity-40 hover:opacity-100 hover:text-primary transition">Owner Portal</Link>
         </div>
       </div>
     </footer>

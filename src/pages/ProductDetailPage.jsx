@@ -14,14 +14,21 @@ export default function ProductDetailPage() {
   const { wishlistIds, toggleWishlist } = useWishlist();
   const isWishlisted = wishlistIds.includes(product.id);
 
-  const [selectedVolume, setSelectedVolume] = useState(product.volumeOptions[0]);
+  const [selectedVolume, setSelectedVolume] = useState(product?.volumeOptions?.[0] || '100ml');
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('ingredients');
-  const [activeImage, setActiveImage] = useState(product.image);
+  const [activeImage, setActiveImage] = useState(product?.image);
+
+  React.useEffect(() => {
+    if (product) {
+      setSelectedVolume(product.volumeOptions?.[0] || '100ml');
+      setActiveImage(product.image);
+    }
+  }, [product]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 space-y-16">
-      
+
       {/* Breadcrumb Navigation */}
       <nav className="text-xs text-outline flex items-center gap-2">
         <Link to="/" className="hover:text-primary transition">Home</Link>
@@ -33,7 +40,7 @@ export default function ProductDetailPage() {
 
       {/* Main PDP Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
+
         {/* Left Column: Image Gallery */}
         <div className="lg:col-span-7 space-y-4">
           <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-surface-container border border-outline-variant/30 shadow-xl relative">
@@ -55,9 +62,8 @@ export default function ProductDetailPage() {
               <button
                 key={idx}
                 onClick={() => setActiveImage(img)}
-                className={`w-24 h-24 rounded-xl overflow-hidden border-2 transition ${
-                  activeImage === img ? 'border-primary shadow-md' : 'border-outline-variant/40 opacity-70 hover:opacity-100'
-                }`}
+                className={`w-24 h-24 rounded-xl overflow-hidden border-2 transition ${activeImage === img ? 'border-primary shadow-md' : 'border-outline-variant/40 opacity-70 hover:opacity-100'
+                  }`}
               >
                 <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
               </button>
@@ -111,15 +117,14 @@ export default function ProductDetailPage() {
               Select Volume Size:
             </label>
             <div className="flex gap-3">
-              {product.volumeOptions.map((vol) => (
+              {(product.volumeOptions || ['100ml']).map((vol) => (
                 <button
                   key={vol}
                   onClick={() => setSelectedVolume(vol)}
-                  className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition border ${
-                    selectedVolume === vol
+                  className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition border ${selectedVolume === vol
                       ? 'bg-primary text-white border-primary shadow-sm'
                       : 'bg-surface-container-low border-outline-variant text-on-surface hover:border-primary'
-                  }`}
+                    }`}
                 >
                   {vol}
                 </button>
@@ -156,11 +161,10 @@ export default function ProductDetailPage() {
 
               <button
                 onClick={() => toggleWishlist(product.id)}
-                className={`p-3.5 rounded-full border transition ${
-                  isWishlisted
+                className={`p-3.5 rounded-full border transition ${isWishlisted
                     ? 'bg-secondary text-white border-secondary'
                     : 'border-outline-variant hover:border-secondary text-on-surface'
-                }`}
+                  }`}
                 title="Save to Wishlist"
               >
                 <Heart size={20} fill={isWishlisted ? "currentColor" : "none"} />
@@ -193,11 +197,10 @@ export default function ProductDetailPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`pb-4 text-sm font-semibold uppercase tracking-wider border-b-2 transition ${
-                activeTab === tab
+              className={`pb-4 text-sm font-semibold uppercase tracking-wider border-b-2 transition ${activeTab === tab
                   ? 'border-primary text-primary font-bold'
                   : 'border-transparent text-outline hover:text-on-surface'
-              }`}
+                }`}
             >
               {tab === 'ingredients' ? 'Full Ingredients' : tab === 'usage' ? 'Application Ritual' : 'Proven Benefits'}
             </button>

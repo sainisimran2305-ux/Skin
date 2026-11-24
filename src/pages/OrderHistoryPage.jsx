@@ -5,7 +5,8 @@ import { useOrder } from '../context/OrderContext';
 
 export default function OrderHistoryPage() {
   const { orders } = useOrder();
-  const [selectedOrder, setSelectedOrder] = useState(orders[0] || null);
+  const [selectedOrderId, setSelectedOrderId] = useState(orders[0]?.id || null);
+  const selectedOrder = orders.find((o) => o.id === selectedOrderId) || orders[0] || null;
 
   const steps = [
     { num: 1, title: 'Order Placed', desc: 'Payment / COD verified' },
@@ -40,7 +41,7 @@ export default function OrderHistoryPage() {
             {orders.map((order) => (
               <button
                 key={order.id}
-                onClick={() => setSelectedOrder(order)}
+                onClick={() => setSelectedOrderId(order.id)}
                 className={`w-full text-left p-5 rounded-2xl border transition-all ${
                   selectedOrder?.id === order.id
                     ? 'bg-surface-container-lowest border-primary shadow-md ring-2 ring-primary/20'
